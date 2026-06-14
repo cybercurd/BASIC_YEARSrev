@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>USMLE Step 1 — Hematology & Oncology Complete</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+:root{
+  --bg:#0d1117;--surface:#161b22;--surface2:#1c2230;--border:#2a3441;
+  --border-subtle:#1e2734;--text:#e6edf3;--text-muted:#8b949e;--text-dim:#4a5568;
+  --accent:#58a6ff;--accent-dim:#1c3356;--green:#3fb950;--green-dim:#122b1a;
+  --red:#f85149;--red-dim:#2d1b1b;--amber:#e3b341;--amber-dim:#2d2410;
+  --purple:#a371f7;--purple-dim:#231b3a;--teal:#39c5cf;--teal-dim:#0e2829;
+  --pink:#f778ba;--pink-dim:#2d1628;--coral:#ff7b72;--coral-dim:#2d1614;
+  --orange:#ffa657;--orange-dim:#2d1e10;--crimson:#e05c5c;--crimson-dim:#2a1515;
+  --sky:#87ceeb;--sky-dim:#0f2535;
+  --font:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',monospace;
+  --radius:8px;--radius-lg:12px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+header{border-bottom:1px solid var(--border);padding:0 1.5rem;display:flex;align-items:center;gap:1rem;height:56px;background:var(--bg);position:sticky;top:0;z-index:100}
+.logo-badge{background:var(--accent);color:#000;font-size:10px;font-weight:600;letter-spacing:.08em;padding:3px 8px;border-radius:4px;font-family:var(--mono);flex-shrink:0}
+.logo-title{font-size:14px;font-weight:500}
+.logo-sub{font-size:11px;color:var(--text-muted)}
+header .spacer{flex:1}
+.header-tag{font-size:11px;font-family:var(--mono);color:var(--text-muted);background:var(--surface);border:1px solid var(--border);padding:3px 10px;border-radius:20px;flex-shrink:0}
+.layout{display:flex;height:calc(100vh - 56px)}
+.sidebar{width:220px;flex-shrink:0;border-right:1px solid var(--border);background:var(--surface);overflow-y:auto;padding:.75rem 0;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
+.sidebar-group-label{font-size:10px;font-weight:600;letter-spacing:.1em;color:var(--text-dim);text-transform:uppercase;padding:.5rem 1.25rem .2rem;font-family:var(--mono)}
+.nav-item{display:flex;align-items:center;gap:9px;padding:7px 1.25rem;cursor:pointer;border-left:2px solid transparent;transition:all .15s;font-size:12.5px;color:var(--text-muted);user-select:none}
+.nav-item:hover{background:var(--surface2);color:var(--text)}
+.nav-item.active{background:var(--accent-dim);border-left-color:var(--accent);color:var(--accent);font-weight:500}
+.nav-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.nav-badge{font-size:9px;font-family:var(--mono);margin-left:auto;padding:1px 5px;border-radius:3px;flex-shrink:0;border:1px solid}
+.main{flex:1;overflow-y:auto;padding:1.75rem 2.25rem;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
+.panel{display:none;animation:fadein .2s ease}
+.panel.active{display:block}
+@keyframes fadein{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+.panel-header{margin-bottom:1.5rem;padding-bottom:1.25rem;border-bottom:1px solid var(--border)}
+.panel-eyebrow{font-size:10.5px;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.panel-title{font-size:24px;font-weight:600;line-height:1.2;margin-bottom:5px}
+.panel-subtitle{font-size:12.5px;color:var(--text-muted);max-width:620px}
+.stat-row{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.stat-chip{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:7px 11px;font-size:12px;display:flex;flex-direction:column;gap:1px}
+.stat-chip .sv{font-size:14px;font-weight:600}
+.stat-chip .sl{font-size:10px;color:var(--text-muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.04em}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:.85rem}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.85rem;margin-bottom:.85rem}
+.grid1{display:grid;grid-template-columns:1fr;gap:.85rem;margin-bottom:.85rem}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.1rem 1.2rem}
+.card-label{font-size:10px;font-family:var(--mono);font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:9px;display:flex;align-items:center;gap:6px}
+.card-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.card p,.card-body{font-size:13px;color:var(--text-muted);line-height:1.65}
+.info-row{display:flex;gap:10px;padding:6px 0;border-bottom:1px solid var(--border-subtle);font-size:13px}
+.info-row:last-child{border-bottom:none}
+.info-key{color:var(--text-muted);min-width:120px;flex-shrink:0;font-size:11.5px;font-family:var(--mono);padding-top:1px}
+.info-val{color:var(--text);line-height:1.55}
+.hl{border-radius:var(--radius);padding:9px 13px;font-size:13px;line-height:1.6;margin:.7rem 0;border-left:3px solid}
+.hl-red{background:var(--red-dim);border-color:var(--red);color:#f4a9a5}
+.hl-blue{background:var(--accent-dim);border-color:var(--accent);color:#8ac4f7}
+.hl-green{background:var(--green-dim);border-color:var(--green);color:#7dd19a}
+.hl-amber{background:var(--amber-dim);border-color:var(--amber);color:#d9ae71}
+.hl-purple{background:var(--purple-dim);border-color:var(--purple);color:#c5a4f7}
+.hl-teal{background:var(--teal-dim);border-color:var(--teal);color:#7dd5da}
+.hl-crimson{background:var(--crimson-dim);border-color:var(--crimson);color:#f4a0a0}
+.hl-sky{background:var(--sky-dim);border-color:var(--sky);color:#a0cfe8}
+.subgrid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}
+.sc{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:9px 11px;font-size:12.5px}
+.sc-name{font-weight:600;font-size:12px;margin-bottom:3px;font-family:var(--mono)}
+.sc-desc{color:var(--text-muted);line-height:1.5;font-size:12px}
+.pearl-box{background:linear-gradient(135deg,#1a1f2e 0%,#141928 100%);border:1px solid #2a3560;border-radius:var(--radius-lg);padding:1.1rem 1.2rem;margin-top:1.25rem}
+.pearl-label{font-size:10px;font-family:var(--mono);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:7px;display:flex;align-items:center;gap:5px}
+.pearl-label::before{content:'★';font-size:11px}
+.pearl-items{list-style:none}
+.pearl-items li{font-size:12.5px;color:#a8c4e8;padding:3px 0 3px 13px;position:relative;line-height:1.55}
+.pearl-items li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:10px;top:5px}
+.lab-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:8px}
+.lab-table th{background:var(--surface2);color:var(--text-muted);font-weight:500;font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;padding:7px 10px;text-align:left;border-bottom:1px solid var(--border)}
+.lab-table td{padding:7px 10px;border-bottom:1px solid var(--border-subtle);color:var(--text);vertical-align:top}
+.lab-table tr:last-child td{border-bottom:none}
+.up{color:#3fb950;font-weight:600}.down{color:#f85149;font-weight:600}.norm{color:#8b949e}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+@media(max-width:900px){.sidebar{width:180px}.main{padding:1.25rem}.grid2,.grid3{grid-template-columns:1fr}.subgrid{grid-template-columns:1fr}}
+@media(max-width:640px){.layout{flex-direction:column;height:auto}.sidebar{width:100%;border-right:none;border-bottom:1px solid var(--border);display:flex;flex-wrap:wrap;padding:.5rem;gap:3px}.nav-item{border-left:none;border-radius:5px;padding:5px 9px;font-size:11.5px}.nav-badge{display:none}.sidebar-group-label{display:none}.main{padding:1rem}}
+</style>
+</head>
+<body>
+<header>
+  <span class="logo-badge">USMLE</span>
+  <div><div class="logo-title">Hematology &amp; Oncology</div><div class="logo-sub">Step 1 Complete Reference</div></div>
+  <div class="spacer"></div>
+  <span class="header-tag">18 topics covered</span>
+</header>
+
+<div class="layout">
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-group-label">Acute Leukemias</div>
+  <div class="nav-item active" onclick="show('aml',this)"><span class="nav-dot" style="background:#f85149"></span>AML<span class="nav-badge" style="background:#2d1614;color:#f85149;border-color:#5a2a28">Acute</span></div>
+  <div class="nav-item" onclick="show('all',this)"><span class="nav-dot" style="background:#58a6ff"></span>ALL<span class="nav-badge" style="background:#1c3356;color:#58a6ff;border-color:#1e3a6e">Acute</span></div>
+  <div class="sidebar-group-label" style="margin-top:6px">Chronic Leukemias</div>
+  <div class="nav-item" onclick="show('cml',this)"><span class="nav-dot" style="background:#e3b341"></span>CML<span class="nav-badge" style="background:#2d2410;color:#e3b341;border-color:#5a4a20">Chronic</span></div>
+  <div class="nav-item" onclick="show('cll',this)"><span class="nav-dot" style="background:#3fb950"></span>CLL<span class="nav-badge" style="background:#122b1a;color:#3fb950;border-color:#1e4a2a">Chronic</span></div>
+  <div class="sidebar-group-label" style="margin-top:6px">Plasma Cell / Lymphoma</div>
+  <div class="nav-item" onclick="show('mm',this)"><span class="nav-dot" style="background:#a371f7"></span>Multiple Myeloma</div>
+  <div class="nav-item" onclick="show('hl',this)"><span class="nav-dot" style="background:#39c5cf"></span>Hodgkin Lymphoma</div>
+  <div class="nav-item" onclick="show('nhl',this)"><span class="nav-dot" style="background:#f778ba"></span>Non-Hodgkin</div>
+  <div class="sidebar-group-label" style="margin-top:6px">Solid Tumors</div>
+  <div class="nav-item" onclick="show('bc',this)"><span class="nav-dot" style="background:#ff7b72"></span>Breast Cancer</div>
+  <div class="nav-item" onclick="show('cc',this)"><span class="nav-dot" style="background:#ffa657"></span>Cervical Cancer</div>
+  <div class="sidebar-group-label" style="margin-top:10px;border-top:1px solid var(--border);padding-top:10px">Anemia Overview</div>
+  <div class="nav-item" onclick="show('anemia',this)"><span class="nav-dot" style="background:#e05c5c"></span>Anemia (General)<span class="nav-badge" style="background:#2a1515;color:#e05c5c;border-color:#5a2828">Core</span></div>
+  <div class="nav-item" onclick="show('micro',this)"><span class="nav-dot" style="background:#e3b341"></span>Microcytic Anemias</div>
+  <div class="nav-item" onclick="show('macro',this)"><span class="nav-dot" style="background:#87ceeb"></span>Megaloblastic Anemia</div>
+  <div class="sidebar-group-label" style="margin-top:6px">Hemoglobinopathies</div>
+  <div class="nav-item" onclick="show('thal',this)"><span class="nav-dot" style="background:#a371f7"></span>Thalassemia</div>
+  <div class="nav-item" onclick="show('scd',this)"><span class="nav-dot" style="background:#f85149"></span>Sickle Cell Disease</div>
+  <div class="sidebar-group-label" style="margin-top:6px">Infectious / Coagulation</div>
+  <div class="nav-item" onclick="show('malaria',this)"><span class="nav-dot" style="background:#3fb950"></span>Malaria</div>
+  <div class="nav-item" onclick="show('coag',this)"><span class="nav-dot" style="background:#39c5cf"></span>Coagulation Cascade</div>
+  <div class="nav-item" onclick="show('hemo',this)"><span class="nav-dot" style="background:#ff7b72"></span>Hemophilia A &amp; B</div>
+  <div class="nav-item" onclick="show('acq',this)"><span class="nav-dot" style="background:#ffa657"></span>Acquired Disorders</div>
+</nav>
+
+<main class="main" id="mainContent">
+
+<div class="panel active" id="aml">
+  <div class="panel-header">
+    <div class="panel-eyebrow" style="color:#f85149">Acute Leukemia · Myeloid Lineage</div>
+    <div class="panel-title">Acute Myelogenous Leukemia (AML)</div>
+    <div class="panel-subtitle">Most common acute leukemia in adults · Peak age 15–39 and >60 · Rapidly fatal without treatment</div>
+    <div class="stat-row">
+      <div class="stat-chip"><span class="sv" style="color:#f85149">&gt;20%</span><span class="sl">blasts (WHO)</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#e3b341">Auer Rods</span><span class="sl">pathognomonic</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#f85149">MPO+</span><span class="sl">myeloperoxidase</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#58a6ff">7+3</span><span class="sl">standard induction</span></div>
+    </div>
+  </div>
+  <div class="grid1"><div class="card"><div class="card-label" style="color:#f85149">Definition &amp; Pathophysiology</div><p>Malignant clonal proliferation of immature myeloid precursors (blasts) arrested in early differentiation. Acquired somatic mutations → differentiation arrest → non-functional blast accumulation → bone marrow failure. Key mutations: <strong style="color:#e3b341">FLT3-ITD</strong> (poor prognosis), <strong style="color:#3fb950">NPM1</strong> (good), <strong style="color:#3fb950">CEBPA double mutant</strong> (good). Critical subtype: <strong style="color:#f85149">t(15;17)</strong> → PML-RARα → APL (M3) — differentiation arrest at promyelocyte, high DIC risk.</p></div></div>
+  <div class="grid2">
+    <div class="card"><div class="card-label" style="color:#f85149">Clinical Features</div>
+      <div class="info-row"><span class="info-key">Onset</span><span class="info-val">Acute — days to weeks; rapid deterioration</span></div>
+      <div class="info-row"><span class="info-key">Anemia</span><span class="info-val">Fatigue, pallor, dyspnea on exertion</span></div>
+      <div class="info-row"><span class="info-key">Neutropenia</span><span class="info-val">Fever, recurrent or unusual infections</span></div>
+      <div class="info-row"><span class="info-key">Thrombocytopenia</span><span class="info-val">Petechiae, ecchymosis, mucosal bleeding</span></div>
+      <div class="info-row"><span class="info-key">Gingival hyperplasia</span><span class="info-val">M4/M5 monocytic subtypes — classic finding</span></div>
+      <div class="info-row"><span class="info-key">Leukostasis</span><span class="info-val">CNS / pulmonary symptoms if WBC very high</span></div>
+    </div>
+    <div class="card"><div class="card-label" style="color:#f85149">Key Distinguishing Features</div>
+      <div class="info-row"><span class="info-key">Auer rods</span><span class="info-val">Pink needle inclusions of fused lysosomes — pathognomonic of AML</span></div>
+      <div class="info-row"><span class="info-key">MPO / Sudan B</span><span class="info-val">Positive — confirms myeloid lineage (ALL is MPO−)</span></div>
+      <div class="info-row"><span class="info-key">TdT negative</span><span class="info-val">No TdT (immature lymphoid marker) — vs ALL (TdT+)</span></div>
+      <div class="info-row"><span class="info-key">APL t(15;17)</span><span class="info-val">Faggot cells (bundles of Auer rods); DIC; treat with ATRA first</span></div>
+      <div class="info-row"><span class="info-key">Favorable cytogenetics</span><span class="info-val">t(8;21), inv(16) = core binding factor AML; good prognosis</span></div>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="card"><div class="card-label" style="color:#f85149">Diagnostic Workup</div>
+      <div class="info-row"><span class="info-key">CBC</span><span class="info-val">Variable WBC; anemia; thrombocytopenia</span></div>
+      <div class="info-row"><span class="info-key">Blood smear</span><span class="info-val">Circulating blasts; Auer rods visible in M3</span></div>
+      <div class="info-row"><span class="info-key">Bone marrow Bx</span><span class="info-val">&gt;20% blasts; MPO+ by flow cytometry</span></div>
+      <div class="info-row"><span class="info-key">Cytogenetics/FISH</span><span class="info-val">t(15;17), t(8;21), inv(16), FLT3, NPM1</span></div>
+      <div class="info-row"><span class="info-key">Coagulation panel</span><span class="info-val">PT/PTT/fibrinogen/D-dimer — rule out DIC in APL</span></div>
+    </div>
+    <div class="card"><div class="card-label" style="color:#f85149">Treatment</div>
+      <div class="info-row"><span class="info-key">Standard induction</span><span class="info-val">"7+3": cytarabine × 7 days + daunorubicin × 3 days</span></div>
+      <div class="info-row"><span class="info-key">APL (M3)</span><span class="info-val">ATRA + arsenic trioxide (ATO) — not standard chemo</span></div>
+      <div class="info-row"><span class="info-key">FLT3+ targeted</span><span class="info-val">Midostaurin + chemo; gilteritinib for relapsed disease</span></div>
+      <div class="info-row"><span class="info-key">Elderly/unfit</span><span class="info-val">Venetoclax + azacitidine (hypomethylating agent)</span></div>
+      <div class="info-row"><span class="info-key">Consolidation</span><span class="info-val">High-dose cytarabine; allogeneic BMT for high-risk</span></div>
+    </div>
+  </div>
+  <div class="hl hl-red">⚠ APL Emergency: t(15;17) → DIC from granule release. Start ATRA immediately upon suspicion — before cytogenetics confirm. Do NOT use standard 7+3 induction first. ATRA induces promyelocyte differentiation.</div>
+  <div class="pearl-box"><div class="pearl-label">Step 1 Pearls — AML</div><ul class="pearl-items">
+    <li>Auer rods = AML (myeloid). No Auer rods in ALL (lymphoid).</li>
+    <li>APL (M3) + DIC + faggot cells → ATRA + ATO. Never start with 7+3.</li>
+    <li>FLT3-ITD = poor prognosis; NPM1 mutated = good prognosis.</li>
+    <li>Gingival hyperplasia → monocytic AML (M4 or M5).</li>
+    <li>AML is TdT−; ALL is TdT+ — key immunophenotypic distinction.</li>
+  </ul></div>
+</div>
+
+<div class="panel" id="all">
+  <div class="panel-header">
+    <div class="panel-eyebrow" style="color:#58a6ff">Acute Leukemia · Lymphoid Lineage</div>
+    <div class="panel-title">Acute Lymphocytic Leukemia (ALL)</div>
+    <div class="panel-subtitle">Most common cancer in children · Peak age 2–5 years · B-ALL (85%) and T-ALL (15%)</div>
+    <div class="stat-row">
+      <div class="stat-chip"><span class="sv" style="color:#58a6ff">TdT+</span><span class="sl">key marker</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#3fb950">&gt;85%</span><span class="sl">cure (children)</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#e3b341">~40%</span><span class="sl">cure (adults)</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#f85149">Ph+</span><span class="sl">worst adult prognosis</span></div>
+    </div>
+  </div>
+  <div class="grid1"><div class="card"><div class="card-label" style="color:#58a6ff">Definition &amp; Pathophysiology</div><p>Malignant clonal proliferation of immature lymphoid precursors (lymphoblasts — B or T cell) arrested in early development, replacing normal bone marrow. Key genetic events: <strong style="color:#3fb950">t(12;21) ETV6-RUNX1</strong> (25% pediatric, good prognosis); <strong style="color:#f85149">t(9;22) BCR-ABL Philadelphia chromosome</strong> (25% adult ALL, poor prognosis); <strong style="color:#f85149">MLL rearrangements</strong> (infant ALL, very poor); <strong style="color:#3fb950">hyperdiploidy</strong> (&gt;50 chr, favorable in children).</p></div></div>
+  <div class="grid2">
+    <div class="card"><div class="card-label" style="color:#58a6ff">Clinical Features</div>
+      <div class="info-row"><span class="info-key">Bone pain</span><span class="info-val">Very common in children — limp, tenderness, arthralgia (blasts expand periosteum)</span></div>
+      <div class="info-row"><span class="info-key">Marrow failure</span><span class="info-val">Fatigue, pallor, petechiae, recurrent infections</span></div>
+      <div class="info-row"><span class="info-key">CNS</span><span class="info-val">Headache, cranial nerve palsies — sanctuary site</span></div>
+      <div class="info-row"><span class="info-key">Testicular</span><span class="info-val">Painless enlargement — sanctuary site</span></div>
+      <div class="info-row"><span class="info-key">T-ALL specific</span><span class="info-val">Anterior mediastinal mass → SVC syndrome risk (adolescent males)</span></div>
+    </div>
+    <div class="card"><div class="card-label" style="color:#58a6ff">Key Distinguishing Features</div>
+      <div class="info-row"><span class="info-key">TdT+</span><span class="info-val">Terminal deoxynucleotidyl transferase — marks lymphoid immaturity in both B-ALL and T-ALL</span></div>
+      <div class="info-row"><span class="info-key">B-ALL markers</span><span class="info-val">CD10 (CALLA), CD19, CD20, CD22, TdT+</span></div>
+      <div class="info-row"><span class="info-key">T-ALL markers</span><span class="info-val">CD2, CD3, CD5, CD7, TdT+; mediastinal mass</span></div>
+      <div class="info-row"><span class="info-key">No Auer rods</span><span class="info-val">Auer rods = AML only</span></div>
+      <div class="info-row"><span class="info-key">Sanctuary sites</span><span class="info-val">CNS and testes require directed prophylaxis</span></div>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="card"><div class="card-label" style="color:#58a6ff">Diagnostic Workup</div>
+      <div class="info-row"><span class="info-key">CBC / smear</span><span class="info-val">Lymphoblasts; anemia; thrombocytopenia; no Auer rods</span></div>
+      <div class="info-row"><span class="info-key">Bone marrow Bx</span><span class="info-val">&gt;20% lymphoblasts; TdT+ on flow cytometry</span></div>
+      <div class="info-row"><span class="info-key">Lumbar puncture</span><span class="info-val">Mandatory — assesses CNS sanctuary site</span></div>
+      <div class="info-row"><span class="info-key">Cytogenetics</span><span class="info-val">t(9;22), t(12;21), MLL, hyperdiploidy</span></div>
+    </div>
+    <div class="card"><div class="card-label" style="color:#58a6ff">Treatment</div>
+      <div class="info-row"><span class="info-key">Induction</span><span class="info-val">Vincristine + corticosteroids + L-asparaginase + anthracycline</span></div>
+      <div class="info-row"><span class="info-key">CNS prophylaxis</span><span class="info-val">Intrathecal methotrexate (replaces cranial radiation)</span></div>
+      <div class="info-row"><span class="info-key">Maintenance</span><span class="info-val">2–3 years: 6-mercaptopurine + methotrexate</span></div>
+      <div class="info-row"><span class="info-key">Ph+ ALL</span><span class="info-val">Add imatinib or dasatinib (TKI) to standard chemo</span></div>
+    </div>
+  </div>
+  <div class="pearl-box"><div class="pearl-label">Step 1 Pearls — ALL</div><ul class="pearl-items">
+    <li>Child + bone pain + lymphadenopathy + TdT+ lymphoblasts = ALL. Most common pediatric cancer.</li>
+    <li>TdT+ = lymphoid immaturity (both B and T cell ALL). TdT− = AML.</li>
+    <li>CNS and testes are sanctuary sites — require intrathecal methotrexate prophylaxis.</li>
+    <li>T-ALL: adolescent male + anterior mediastinal mass + TdT+ = T-ALL; risk of SVC syndrome.</li>
+    <li>t(9;22) in ALL → add TKI. t(12;21) in children → favorable prognosis.</li>
+  </ul></div>
+</div>
+
+<div class="panel" id="cml">
+  <div class="panel-header">
+    <div class="panel-eyebrow" style="color:#e3b341">Chronic Leukemia · Myeloid Lineage</div>
+    <div class="panel-title">Chronic Myelogenous Leukemia (CML)</div>
+    <div class="panel-subtitle">Adults 25–60 years · Philadelphia chromosome t(9;22) in 95% · Imatinib revolutionized prognosis</div>
+    <div class="stat-row">
+      <div class="stat-chip"><span class="sv" style="color:#e3b341">t(9;22)</span><span class="sl">Philadelphia chromosome</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#f85149">Low LAP</span><span class="sl">vs leukemoid rxn</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#3fb950">Imatinib</span><span class="sl">first-line TKI</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#f85149">Basophilia</span><span class="sl">hallmark smear finding</span></div>
+    </div>
+  </div>
+  <div class="grid1"><div class="card"><div class="card-label" style="color:#e3b341">Definition &amp; Pathophysiology</div><p>Clonal myeloproliferative disorder of a pluripotent stem cell driven by <strong style="color:#e3b341">t(9;22)</strong> → BCR-ABL fusion → constitutively active tyrosine kinase → uncontrolled myeloid proliferation with initially intact differentiation. Three phases: <strong style="color:#3fb950">Chronic</strong> (manageable, years) → <strong style="color:#e3b341">Accelerated</strong> (10–19% blasts) → <strong style="color:#f85149">Blast crisis</strong> (&gt;20% blasts, AML-like or ALL-like, poor prognosis).</p></div></div>
+  <div class="grid2">
+    <div class="card"><div class="card-label" style="color:#e3b341">Clinical Features</div>
+      <div class="info-row"><span class="info-key">Chronic phase</span><span class="info-val">Fatigue, night sweats, weight loss, early satiety (massive splenomegaly); often found incidentally</span></div>
+      <div class="info-row"><span class="info-key">Splenomegaly</span><span class="info-val">Massive — classic; fills left abdomen; splenic infarct can occur</span></div>
+      <div class="info-row"><span class="info-key">Blast crisis</span><span class="info-val">Acute leukemia-like; constitutional deterioration; poor prognosis</span></div>
+    </div>
+    <div class="card"><div class="card-label" style="color:#e3b341">Key Distinguishing Features</div>
+      <div class="info-row"><span class="info-key">LOW LAP</span><span class="info-val">Leukocyte alkaline phosphatase low — differentiates from leukemoid reaction (HIGH LAP)</span></div>
+      <div class="info-row"><span class="info-key">Basophilia</span><span class="info-val">Hallmark peripheral smear finding in CML</span></div>
+      <div class="info-row"><span class="info-key">Full myeloid spectrum</span><span class="info-val">All stages of myeloid maturation visible on smear</span></div>
+      <div class="info-row"><span class="info-key">BCR-ABL by PCR</span><span class="info-val">Gold standard for monitoring treatment response</span></div>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="card"><div class="card-label" style="color:#e3b341">Diagnostic Workup</div>
+      <div class="info-row"><span class="info-key">CBC</span><span class="info-val">Marked leukocytosis (50,000–500,000+); basophilia; full myeloid spectrum</span></div>
+      <div class="info-row"><span class="info-key">LAP score</span><span class="info-val">LOW — key differentiating feature</span></div>
+      <div class="info-row"><span class="info-key">FISH / RT-PCR</span><span class="info-val">BCR-ABL1 fusion — diagnosis and monitoring</span></div>
+      <div class="info-row"><span class="info-key">Bone marrow Bx</span><span class="info-val">Hypercellular; myeloid hyperplasia; increased basophils</span></div>
+    </div>
+    <div class="card"><div class="card-label" style="color:#e3b341">Treatment</div>
+      <div class="info-row"><span class="info-key">First-line</span><span class="info-val">Imatinib — blocks ATP-binding site of BCR-ABL kinase</span></div>
+      <div class="info-row"><span class="info-key">2nd-gen TKIs</span><span class="info-val">Dasatinib, nilotinib — imatinib resistant/intolerant</span></div>
+      <div class="info-row"><span class="info-key">T315I mutation</span><span class="info-val">Resistant to all TKIs except ponatinib (gatekeeper mutation)</span></div>
+      <div class="info-row"><span class="info-key">Blast crisis</span><span class="info-val">Intensive chemo + TKI; allogeneic BMT</span></div>
+    </div>
+  </div>
+  <div class="hl hl-amber">CML vs Leukemoid Reaction: CML = LOW LAP + basophilia + Philadelphia chromosome + massive splenomegaly. Leukemoid = HIGH LAP + no basophilia + no Ph chromosome + reactive cause.</div>
+  <div class="pearl-box"><div class="pearl-label">Step 1 Pearls — CML</div><ul class="pearl-items">
+    <li>t(9;22) Philadelphia chromosome → BCR-ABL constitutive TK → CML. Also in 25% adult ALL.</li>
+    <li>Basophilia is the hallmark peripheral smear finding. Full myeloid spectrum visible.</li>
+    <li>LOW LAP score distinguishes CML from leukemoid reaction (HIGH LAP).</li>
+    <li>Imatinib (Gleevec) = first-line TKI. Converted CML from fatal to manageable disease.</li>
+    <li>Three phases: Chronic → Accelerated → Blast crisis (acute leukemia, poor prognosis).</li>
+  </ul></div>
+</div>
+
+<div class="panel" id="cll">
+  <div class="panel-header">
+    <div class="panel-eyebrow" style="color:#3fb950">Chronic Leukemia · Lymphoid Lineage</div>
+    <div class="panel-title">Chronic Lymphocytic Leukemia (CLL)</div>
+    <div class="panel-subtitle">Most common leukemia in Western adults · Age >60 · CD5+ B-cell origin · Indolent</div>
+    <div class="stat-row">
+      <div class="stat-chip"><span class="sv" style="color:#3fb950">Smudge cells</span><span class="sl">pathognomonic</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#58a6ff">CD5+/CD23+</span><span class="sl">hallmark phenotype</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#e3b341">Watch &amp; wait</span><span class="sl">early-stage standard</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#f85149">~5%</span><span class="sl">Richter transformation</span></div>
+    </div>
+  </div>
+  <div class="grid1"><div class="card"><div class="card-label" style="color:#3fb950">Definition &amp; Pathophysiology</div><p>Monoclonal accumulation of functionally incompetent mature-appearing B lymphocytes that aberrantly co-express <strong style="color:#3fb950">CD5</strong> (normally T-cell marker) + CD19, CD20 (dim), CD23. BCL-2 overexpression → defective apoptosis → lymphocyte accumulation → marrow failure + immune dysfunction. <strong style="color:#e3b341">Hypogammaglobulinemia</strong> → recurrent encapsulated bacterial infections. Autoimmune hemolytic anemia (AIHA) and ITP from dysfunctional autoantibodies. Spectrum with SLL.</p></div></div>
+  <div class="grid2">
+    <div class="card"><div class="card-label" style="color:#3fb950">Clinical Features</div>
+      <div class="info-row"><span class="info-key">Onset</span><span class="info-val">Insidious — most found incidentally on CBC</span></div>
+      <div class="info-row"><span class="info-key">Lymphadenopathy</span><span class="info-val">Painless, diffuse, rubbery</span></div>
+      <div class="info-row"><span class="info-key">Splenomegaly</span><span class="info-val">Common; early satiety</span></div>
+      <div class="info-row"><span class="info-key">Infections</span><span class="info-val">Recurrent sinopulmonary; herpes zoster reactivation</span></div>
+      <div class="info-row"><span class="info-key">AIHA/ITP</span><span class="info-val">Warm autoimmune hemolytic anemia (Coombs+); thrombocytopenia</span></div>
+      <div class="info-row"><span class="info-key">Richter transformation</span><span class="info-val">CLL → DLBCL in ~5%; sudden B symptoms + ↑LDH</span></div>
+    </div>
+    <div class="card"><div class="card-label" style="color:#3fb950">Workup &amp; Treatment</div>
+      <div class="info-row"><span class="info-key">Peripheral smear</span><span class="info-val">Small mature lymphocytes + smudge (basket) cells — pathognomonic</span></div>
+      <div class="info-row"><span class="info-key">Flow cytometry</span><span class="info-val">CD5+/CD19+/CD23+; monoclonal κ or λ — gold standard</span></div>
+      <div class="info-row"><span class="info-key">FISH</span><span class="info-val">del(13q) = favorable; del(17p) / del(11q) = poor prognosis</span></div>
+      <div class="info-row"><span class="info-key">Early-stage Tx</span><span class="info-val">Watch and wait — treatment does NOT improve early-stage survival</span></div>
+      <div class="info-row"><span class="info-key">Symptomatic Tx</span><span class="info-val">Ibrutinib (BTK inhibitor); venetoclax + obinutuzumab</span></div>
+    </div>
+  </div>
+  <div class="pearl-box"><div class="pearl-label">Step 1 Pearls — CLL</div><ul class="pearl-items">
+    <li>Smudge (basket) cells = CLL. Elderly + painless lymphadenopathy + lymphocytosis + smudge cells.</li>
+    <li>CD5+/CD19+/CD23+ co-expression on B cells is the hallmark immunophenotype.</li>
+    <li>Watch and wait early stage — treatment does not improve survival until symptomatic.</li>
+    <li>Richter transformation: CLL → aggressive DLBCL; sudden B symptoms + rising LDH = emergency.</li>
+    <li>Hypogammaglobulinemia → recurrent infections with encapsulated bacteria (S. pneumoniae, H. influenzae).</li>
+  </ul></div>
+</div>
+
+<div class="panel" id="mm">
+  <div class="panel-header">
+    <div class="panel-eyebrow" style="color:#a371f7">Plasma Cell Dyscrasia</div>
+    <div class="panel-title">Multiple Myeloma</div>
+    <div class="panel-subtitle">Most common primary bone malignancy in adults · Median age ~70 · More common in Black Americans</div>
+    <div class="stat-row">
+      <div class="stat-chip"><span class="sv" style="color:#a371f7">CRAB</span><span class="sl">defining criteria</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#f85149">IgG 55%</span><span class="sl">most common M protein</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#e3b341">Lytic lesions</span><span class="sl">punched-out, no sclerosis</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#58a6ff">M spike</span><span class="sl">on SPEP</span></div>
+    </div>
+  </div>
+  <div class="grid1"><div class="card"><div class="card-label" style="color:#a371f7">Definition &amp; Pathophysiology</div><p>Malignant clonal plasma cells secrete M protein (IgG 55%, IgA 25%) + excess free light chains (Bence Jones proteins). Plasma cells stimulate osteoclasts via RANKL/IL-6 and suppress osteoblasts via DKK-1 → lytic bone lesions without reactive sclerosis. They crowd normal marrow → cytopenias and suppress normal Ig → immunodeficiency. Bence Jones proteins → nephrotoxic tubular damage → renal failure (myeloma kidney).</p></div></div>
+  <div class="hl hl-purple">CRAB criteria: hyperCalcemia · Renal insufficiency · Anemia · Bone lesions (lytic) — defines symptomatic MM requiring treatment</div>
+  <div class="grid2">
+    <div class="card"><div class="card-label" style="color:#a371f7">Clinical Features</div>
+      <div class="info-row"><span class="info-key">Bone pain</span><span class="info-val">Most common — back and ribs; pathologic fractures</span></div>
+      <div class="info-row"><span class="info-key">Hypercalcemia</span><span class="info-val">Polyuria, polydipsia, constipation, confusion</span></div>
+      <div class="info-row"><span class="info-key">Renal failure</span><span class="info-val">Cast nephropathy; Bence Jones toxicity; Fanconi syndrome</span></div>
+      <div class="info-row"><span class="info-key">Anemia</span><span class="info-val">Normocytic normochromic — marrow crowding</span></div>
+      <div class="info-row"><span class="info-key">Hyperviscosity</span><span class="info-val">Blurred vision, headache, mucosal bleeding</span></div>
+    </div>
+    <div class="card"><div class="card-label" style="color:#a371f7">Key Findings &amp; Workup</div>
+      <div class="info-row"><span class="info-key">M spike (SPEP)</span><span class="info-val">Narrow monoclonal band in gamma region</span></div>
+      <div class="info-row"><span class="info-key">Bence Jones</span><span class="info-val">Free light chains in urine; precipitate 40–60°C, redissolve 100°C</span></div>
+      <div class="info-row"><span class="info-key">Rouleaux</span><span class="info-val">RBCs stacked like coins on peripheral smear</span></div>
+      <div class="info-row"><span class="info-key">Bone marrow Bx</span><span class="info-val">&gt;10% clonal plasma cells; eccentric nucleus; clock-face chromatin</span></div>
+      <div class="info-row"><span class="info-key">Treatment</span><span class="info-val">VRd (bortezomib + lenalidomide + dex) → autologous BMT; daratumumab; bisphosphonates</span></div>
+    </div>
+  </div>
+  <div class="pearl-box"><div class="pearl-label">Step 1 Pearls — Multiple Myeloma</div><ul class="pearl-items">
+    <li>Elderly + bone pain + normocytic anemia + hypercalcemia + renal failure + rouleaux = MM.</li>
+    <li>CRAB: Calcium↑, Renal failure, Anemia, Bone lesions (LYTIC, punched-out, no sclerosis).</li>
+    <li>Bence Jones: precipitate 40–60°C, redissolve at 100°C.</li>
+    <li>Plasma cell morphology: eccentric nucleus + clock-face chromatin + perinuclear hof (Golgi).</li>
+    <li>MGUS → 1% annual risk of progression. No CRAB = observe only.</li>
+  </ul></div>
+</div>
+
+<div class="panel" id="hl">
+  <div class="panel-header">
+    <div class="panel-eyebrow" style="color:#39c5cf">Lymphoma · Contiguous Spread · Curable</div>
+    <div class="panel-title">Hodgkin Lymphoma</div>
+    <div class="panel-subtitle">Bimodal age 15–35 and >55 · Reed-Sternberg cells define it · >85% cure rate</div>
+    <div class="stat-row">
+      <div class="stat-chip"><span class="sv" style="color:#39c5cf">RS cells</span><span class="sl">owl-eye nucleoli</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#f85149">CD30+/CD15+</span><span class="sl">RS phenotype</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#3fb950">ABVD</span><span class="sl">standard chemo</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#3fb950">&gt;85%</span><span class="sl">cure rate</span></div>
+    </div>
+  </div>
+  <div class="grid1"><div class="card"><div class="card-label" style="color:#39c5cf">Definition &amp; Pathophysiology</div><p>Malignant lymphoma defined by Reed-Sternberg (RS) cells — large binucleated cells with prominent "owl-eye" eosinophilic nucleoli — expressing <strong style="color:#39c5cf">CD30+ / CD15+</strong> but lacking CD45 (LCA) and usually CD20. Derived from germinal center B cells. EBV associated with mixed cellularity subtype. RS cells are a minority; surrounding reactive microenvironment drives symptoms via cytokine release (IL-5 → eosinophilia; IL-6 → fever; IL-13 → pruritus). Spreads contiguously (node-to-node, orderly).</p></div></div>
+  <div class="grid2">
+    <div class="card"><div class="card-label" style="color:#39c5cf">Subtypes</div>
+      <div class="subgrid">
+        <div class="sc"><div class="sc-name" style="color:#39c5cf">Nodular sclerosis</div><div class="sc-desc">Most common (65–70%); young women; mediastinal mass; collagen bands; lacunar cells; good prognosis</div></div>
+        <div class="sc"><div class="sc-name" style="color:#e3b341">Mixed cellularity</div><div class="sc-desc">2nd most common; older; EBV+ 70%; abundant RS cells; intermediate prognosis</div></div>
+        <div class="sc"><div class="sc-name" style="color:#3fb950">Lymphocyte-rich</div><div class="sc-desc">Rare; best prognosis; few RS cells</div></div>
+        <div class="sc"><div class="sc-name" style="color:#f85149">Lymphocyte-depleted</div><div class="sc-desc">Rare; worst prognosis; HIV-associated; many RS cells</div></div>
+      </div>
+    </div>
+    <div class="card"><div class="card-label" style="color:#39c5cf">Clinical Features</div>
+      <div class="info-row"><span class="info-key">Lymphadenopathy</span><span class="info-val">Painless, rubbery; cervical → mediastinal (contiguous)</span></div>
+      <div class="info-row"><span class="info-key">B symptoms</span><span class="info-val">Fever, night sweats, &gt;10% weight loss</span></div>
+      <div class="info-row"><span class="info-key">Pel-Ebstein fever</span><span class="info-val">Cyclical fever pattern — classic, uncommon</span></div>
+      <div class="info-row"><span class="info-key">Alcohol pain</span><span class="info-val">Pain at nodal sites after alcohol — PATHOGNOMONIC of HL</span></div>
+      <div class="info-row"><span class="info-key">Pruritus</span><span class="info-val">Generalized itching from cytokine release</span></div>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="card"><div class="card-label" style="color:#39c5cf">Workup</div>
+      <div class="info-row"><span class="info-key">Excisional biopsy</span><span class="info-val">RS cells in reactive background; IHC: CD30+/CD15+/CD45−</span></div>
+      <div class="info-row"><span class="info-key">PET/CT</span><span class="info-val">Staging (FDG-avid) and treatment response (Deauville score)</span></div>
+      <div class="info-row"><span class="info-key">Ann Arbor staging</span><span class="info-val">I (one region) → IV (extranodal); A/B suffix for B symptoms</span></div>
+    </div>
+    <div class="card"><div class="card-label" style="color:#39c5cf">Treatment</div>
+      <div class="info-row"><span class="info-key">Early (I–IIA)</span><span class="info-val">ABVD × 2–4 cycles + involved-site radiation</span></div>
+      <div class="info-row"><span class="info-key">Advanced (III–IV)</span><span class="info-val">ABVD × 6 cycles ± radiation; BEACOPP (high-risk)</span></div>
+      <div class="info-row"><span class="info-key">Relapsed</span><span class="info-val">Brentuximab vedotin (anti-CD30 ADC) + salvage → auto BMT</span></div>
+      <div class="info-row"><span class="info-key">ABVD toxicities</span><span class="info-val">Bleomycin → pulmonary toxicity; Adriamycin → cardiotoxicity</span></div>
+    </div>
+  </div>
+  <div class="pearl-box"><div class="pearl-label">Step 1 Pearls — Hodgkin Lymphoma</div><ul class="pearl-items">
+    <li>RS cells: CD30+ / CD15+ / CD45− — large binucleated, owl-eye nucleoli. HL hallmark.</li>
+    <li>HL spreads contiguously (orderly). NHL spreads non-contiguously (disseminated).</li>
+    <li>Alcohol-induced pain at lymph node sites = PATHOGNOMONIC of Hodgkin lymphoma.</li>
+    <li>Nodular sclerosis = most common subtype; young woman + mediastinal mass + lacunar cells.</li>
+    <li>ABVD: Bleomycin → pulmonary toxicity. Adriamycin → cardiomyopathy.</li>
+  </ul></div>
+</div>
+
+<div class="panel" id="nhl">
+  <div class="panel-header">
+    <div class="panel-eyebrow" style="color:#f778ba">Lymphoma · Non-Contiguous Spread</div>
+    <div class="panel-title">Non-Hodgkin Lymphoma (NHL)</div>
+    <div class="panel-subtitle">More common than HL · No RS cells · Non-contiguous spread · B-cell 85% / T-cell 15%</div>
+    <div class="stat-row">
+      <div class="stat-chip"><span class="sv" style="color:#f778ba">No RS cells</span><span class="sl">defining negative</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#3fb950">R-CHOP</span><span class="sl">DLBCL standard</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#e3b341">t(8;14)</span><span class="sl">Burkitt/MYC</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#58a6ff">t(14;18)</span><span class="sl">Follicular/BCL2</span></div>
+    </div>
+  </div>
+  <div class="card" style="margin-bottom:.85rem"><div class="card-label" style="color:#f778ba">High-Yield Subtypes</div>
+    <div class="subgrid">
+      <div class="sc"><div class="sc-name" style="color:#58a6ff">DLBCL</div><div class="sc-desc">Most common NHL in adults. Aggressive. R-CHOP × 6. MYC+BCL2 = "double hit" = very poor.</div></div>
+      <div class="sc"><div class="sc-name" style="color:#3fb950">Follicular lymphoma</div><div class="sc-desc">2nd most common. Indolent. t(14;18)→BCL2 anti-apoptosis. Watch-and-wait; rituximab when needed. Can transform to DLBCL.</div></div>
+      <div class="sc"><div class="sc-name" style="color:#f85149">Burkitt lymphoma</div><div class="sc-desc">t(8;14)→MYC overexpression. Ki-67 ~100%. Starry-sky histology. Endemic (Africa, jaw, EBV); sporadic (abdomen). Intensive chemo; TLS prophylaxis.</div></div>
+      <div class="sc"><div class="sc-name" style="color:#e3b341">Mantle cell</div><div class="sc-desc">t(11;14)→Cyclin D1. CD5+. Aggressive. Disseminated at diagnosis. GI polyposis.</div></div>
+      <div class="sc"><div class="sc-name" style="color:#a371f7">Gastric MALT</div><div class="sc-desc">H. pylori chronic stimulation. Early-stage: H. pylori eradication alone induces remission.</div></div>
+      <div class="sc"><div class="sc-name" style="color:#39c5cf">Primary CNS lymphoma</div><div class="sc-desc">Almost always DLBCL. HIV-associated. Periventricular. Treat with high-dose methotrexate.</div></div>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="card"><div class="card-label" style="color:#f778ba">Key Translocations</div>
+      <div class="info-row"><span class="info-key">t(14;18)</span><span class="info-val">Follicular → IgH-BCL2 → anti-apoptosis</span></div>
+      <div class="info-row"><span class="info-key">t(8;14)</span><span class="info-val">Burkitt → IgH-MYC → maximal proliferation (Ki-67 ~100%)</span></div>
+      <div class="info-row"><span class="info-key">t(11;14)</span><span class="info-val">Mantle cell → IgH-Cyclin D1 → G1→S dysregulation</span></div>
+      <div class="info-row"><span class="info-key">Double hit</span><span class="info-val">MYC + BCL2 → very aggressive DLBCL; worst prognosis</span></div>
+    </div>
+    <div class="card"><div class="card-label" style="color:#f778ba">Workup &amp; Treatment</div>
+      <div class="info-row"><span class="info-key">Excisional biopsy</span><span class="info-val">Architecture (follicular vs diffuse) is essential for classification</span></div>
+      <div class="info-row"><span class="info-key">FISH/IHC/flow</span><span class="info-val">Translocations; CD markers; Ki-67 index</span></div>
+      <div class="info-row"><span class="info-key">DLBCL</span><span class="info-val">R-CHOP × 6; CAR-T for relapsed/refractory</span></div>
+      <div class="info-row"><span class="info-key">Burkitt</span><span class="info-val">Intensive rapid chemo; allopurinol/rasburicase for TLS</span></div>
+    </div>
+  </div>
+  <div class="pearl-box"><div class="pearl-label">Step 1 Pearls — NHL</div><ul class="pearl-items">
+    <li>t(14;18) = Follicular (BCL2). t(8;14) = Burkitt (MYC, Ki-67~100%). t(11;14) = Mantle (Cyclin D1).</li>
+    <li>Starry sky = Burkitt lymphoma — tingible-body macrophages eating apoptotic tumor cells.</li>
+    <li>NHL does NOT spread contiguously; extranodal disease (GI, CNS) very common.</li>
+    <li>Gastric MALT = H. pylori → eradicate bacteria to cure early-stage lymphoma.</li>
+    <li>Tumor lysis syndrome with Burkitt: K+↑, PO4↑, uric acid↑, Ca2+↓, creatinine↑.</li>
+  </ul></div>
+</div>
+
+<div class="panel" id="bc">
+  <div class="panel-header">
+    <div class="panel-eyebrow" style="color:#ff7b72">Solid Tumor · Breast Epithelium</div>
+    <div class="panel-title">Breast Cancer</div>
+    <div class="panel-subtitle">Most common cancer in women globally · Second leading cause of cancer death · Receptor status drives all treatment</div>
+    <div class="stat-row">
+      <div class="stat-chip"><span class="sv" style="color:#ff7b72">BRCA1/2</span><span class="sl">key germline mutations</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#58a6ff">HER2+</span><span class="sl">trastuzumab target</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#f85149">TNBC</span><span class="sl">worst prognosis</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#3fb950">ER/PR+</span><span class="sl">most common subtype</span></div>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="card"><div class="card-label" style="color:#ff7b72">Risk Factors &amp; Pathophysiology</div>
+      <div class="info-row"><span class="info-key">BRCA1 (chr 17q)</span><span class="info-val">DNA repair TSG; 70–80% lifetime breast risk; 40% ovarian risk; → TNBC</span></div>
+      <div class="info-row"><span class="info-key">BRCA2 (chr 13q)</span><span class="info-val">DNA repair; breast cancer in women AND men; pancreatic cancer; → ER+ tumors</span></div>
+      <div class="info-row"><span class="info-key">HER2/neu (17q)</span><span class="info-val">Proto-oncogene amplification → overactive RTK → rapid proliferation → trastuzumab target</span></div>
+      <div class="info-row"><span class="info-key">TP53 (Li-Fraumeni)</span><span class="info-val">SBLA: Sarcoma, Breast, brain, Leukemia, Adrenal cancers</span></div>
+      <div class="info-row"><span class="info-key">Hormonal exposure</span><span class="info-val">Early menarche, late menopause, nulliparity, postmenopausal HRT → cumulative estrogen</span></div>
+    </div>
+    <div class="card"><div class="card-label" style="color:#ff7b72">Histologic Types</div>
+      <div class="info-row"><span class="info-key">Invasive ductal (IDC)</span><span class="info-val">Most common (75–80%); firm spiculated mass; high metastatic potential</span></div>
+      <div class="info-row"><span class="info-key">Invasive lobular</span><span class="info-val">~10%; Indian file pattern; bilateral risk; mammographically occult</span></div>
+      <div class="info-row"><span class="info-key">DCIS</span><span class="info-val">Pre-invasive; microcalcifications; comedonecrosis in solid subtype</span></div>
+      <div class="info-row"><span class="info-key">Paget disease</span><span class="info-val">Eczematous nipple; Paget cells (mucin-containing) in epidermis; underlying ductal Ca</span></div>
+      <div class="info-row"><span class="info-key">Inflammatory BC</span><span class="info-val">Peau d'orange (dermal lymphatic obstruction); very aggressive; may lack discrete mass</span></div>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="card"><div class="card-label" style="color:#ff7b72">Receptor Subtypes &amp; Treatment</div>
+      <div class="info-row"><span class="info-key">ER+/PR+ (Luminal)</span><span class="info-val">Tamoxifen (premenopausal SERM; AE: endometrial Ca + DVT); aromatase inhibitors (postmenopausal; AE: osteoporosis)</span></div>
+      <div class="info-row"><span class="info-key">HER2+</span><span class="info-val">Trastuzumab (anti-HER2 mAb; AE: cardiomyopathy — monitor ECHO); pertuzumab; T-DM1</span></div>
+      <div class="info-row"><span class="info-key">TNBC</span><span class="info-val">Chemotherapy (AC-T); olaparib (PARP inhibitor) if BRCA mutated; pembrolizumab if PD-L1+</span></div>
+    </div>
+    <div class="card"><div class="card-label" style="color:#ff7b72">Workup &amp; Key Facts</div>
+      <div class="info-row"><span class="info-key">Mammogram</span><span class="info-val">Spiculated mass + microcalcifications = malignant until proven otherwise</span></div>
+      <div class="info-row"><span class="info-key">Core needle biopsy</span><span class="info-val">Definitive — histology + ER/PR/HER2 receptor status</span></div>
+      <div class="info-row"><span class="info-key">Surgery</span><span class="info-val">Lumpectomy + radiation = mastectomy in overall survival for early-stage</span></div>
+      <div class="info-row"><span class="info-key">Metastases</span><span class="info-val">Bone (most common), lung, liver, brain; ILC → GI/ovary</span></div>
+    </div>
+  </div>
+  <div class="pearl-box"><div class="pearl-label">Step 1 Pearls — Breast Cancer</div><ul class="pearl-items">
+    <li>BRCA1 → TNBC + ovarian cancer. BRCA2 → ER+ tumors + male breast cancer + pancreatic cancer.</li>
+    <li>Tamoxifen: SERM, AE = endometrial cancer + DVT. Trastuzumab AE = cardiomyopathy (monitor ECHO).</li>
+    <li>Peau d'orange = inflammatory BC (dermal lymphatic obstruction by tumor emboli).</li>
+    <li>Spiculated mass + microcalcifications on mammogram = malignant until proven otherwise.</li>
+    <li>Lumpectomy + radiation = mastectomy for early-stage survival outcomes (equivalent).</li>
+  </ul></div>
+</div>
+
+<div class="panel" id="cc">
+  <div class="panel-header">
+    <div class="panel-eyebrow" style="color:#ffa657">Solid Tumor · HPV-Driven · Preventable</div>
+    <div class="panel-title">Cervical Cancer</div>
+    <div class="panel-subtitle">Almost entirely caused by HPV · 4th most common in women worldwide · Peak age 35–44</div>
+    <div class="stat-row">
+      <div class="stat-chip"><span class="sv" style="color:#ffa657">HPV 16/18</span><span class="sl">70% of cases</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#f85149">E6→p53↓</span><span class="sl">E7→Rb↓</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#3fb950">Gardasil 9</span><span class="sl">prevents ~90%</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#58a6ff">Pap q3y</span><span class="sl">or co-test q5y (30+)</span></div>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="card"><div class="card-label" style="color:#ffa657">HPV Molecular Mechanism</div>
+      <div class="info-row"><span class="info-key">E6 oncoprotein</span><span class="info-val">Binds p53 → ubiquitin degradation → no apoptosis / DNA repair checkpoint</span></div>
+      <div class="info-row"><span class="info-key">E7 oncoprotein</span><span class="info-val">Binds and inactivates Rb → releases E2F → uncontrolled G1→S entry</span></div>
+      <div class="info-row"><span class="info-key">HPV 16</span><span class="info-val">Squamous cell carcinoma — most common type (80%)</span></div>
+      <div class="info-row"><span class="info-key">HPV 18</span><span class="info-val">Adenocarcinoma — glandular, harder to detect on Pap</span></div>
+      <div class="info-row"><span class="info-key">Koilocytes</span><span class="info-val">Perinuclear halo + nuclear atypia on Pap — pathognomonic HPV cytopathic effect</span></div>
+    </div>
+    <div class="card"><div class="card-label" style="color:#ffa657">CIN Grading &amp; Clinical Features</div>
+      <div class="info-row"><span class="info-key">CIN 1</span><span class="info-val">Lower one-third; mostly regress spontaneously; observe</span></div>
+      <div class="info-row"><span class="info-key">CIN 2 / 3</span><span class="info-val">LEEP or cold knife conization; CIN 3 = full-thickness atypia</span></div>
+      <div class="info-row"><span class="info-key">Pre-invasive</span><span class="info-val">Asymptomatic — only detectable by screening (Pap)</span></div>
+      <div class="info-row"><span class="info-key">Early invasive</span><span class="info-val">Postcoital bleeding (most classic), vaginal discharge</span></div>
+      <div class="info-row"><span class="info-key">Advanced</span><span class="info-val">Pelvic pain; hydronephrosis (most common cause of death); fistula</span></div>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="card"><div class="card-label" style="color:#ffa657">Workup &amp; Staging</div>
+      <div class="info-row"><span class="info-key">Pap smear</span><span class="info-val">Ages 21–29: q3 years. Ages 30–65: q5 years (Pap + HPV co-test)</span></div>
+      <div class="info-row"><span class="info-key">Colposcopy</span><span class="info-val">After abnormal Pap; acetic acid + Lugol iodine; targeted biopsy</span></div>
+      <div class="info-row"><span class="info-key">FIGO staging</span><span class="info-val">I (cervix only) → II (beyond) → III (pelvic wall) → IV (bladder/distant)</span></div>
+    </div>
+    <div class="card"><div class="card-label" style="color:#ffa657">Treatment &amp; Prevention</div>
+      <div class="info-row"><span class="info-key">Stage IB–IIA</span><span class="info-val">Radical hysterectomy OR cisplatin-based chemoradiation</span></div>
+      <div class="info-row"><span class="info-key">Stage IIB–IVA</span><span class="info-val">Cisplatin + EBRT + brachytherapy</span></div>
+      <div class="info-row"><span class="info-key">Gardasil 9</span><span class="info-val">HPV types 6,11,16,18,31,33,45,52,58. Ages 9–26 routinely; up to 45 shared decision-making</span></div>
+    </div>
+  </div>
+  <div class="pearl-box"><div class="pearl-label">Step 1 Pearls — Cervical Cancer</div><ul class="pearl-items">
+    <li>HPV 16 → squamous cell Ca. HPV 18 → adenocarcinoma. E6 destroys p53; E7 destroys Rb.</li>
+    <li>Koilocytes = perinuclear halo + nuclear atypia = HPV cytopathic effect on Pap smear.</li>
+    <li>Pap every 3 years (age 21–29); every 5 years with co-testing (age 30–65).</li>
+    <li>Postcoital bleeding = classic early warning sign of invasive cervical cancer.</li>
+    <li>DES in utero → clear cell adenocarcinoma of vagina/cervix in daughters.</li>
+    <li>Obstructive uropathy (hydronephrosis) = most common cause of death in advanced cervical cancer.</li>
+  </ul></div>
+</div>
+
+<div class="panel" id="anemia">
+  <div class="panel-header">
+    <div class="panel-eyebrow" style="color:#e05c5c">Hematology · Red Cell Disorders</div>
+    <div class="panel-title">Anemia — General Approach</div>
+    <div class="panel-subtitle">Reduced oxygen-carrying capacity of blood · Classified by MCV and reticulocyte response · Systematic workup is essential</div>
+    <div class="stat-row">
+      <div class="stat-chip"><span class="sv" style="color:#e05c5c">Hgb &lt;12</span><span class="sl">women (WHO)</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#e05c5c">Hgb &lt;13</span><span class="sl">men (WHO)</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#e3b341">MCV</span><span class="sl">first branch point</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#3fb950">Reticulocyte</span><span class="sl">production vs destruction</span></div>
+    </div>
+  </div>
+  <div class="grid1"><div class="card"><div class="card-label" style="color:#e05c5c">Definition &amp; Classification Framework</div><p>Anemia is a reduction in hemoglobin concentration (WHO: Hgb &lt;12 g/dL in women, &lt;13 g/dL in men) leading to decreased oxygen delivery. The diagnostic approach uses two axes: <strong style="color:#e3b341">MCV</strong> (cell size) and <strong style="color:#3fb950">reticulocyte count</strong> (bone marrow response). Step 1: Is the reticulocyte count high (destruction/loss) or low (production failure)? Step 2: Use MCV to classify production failures into micro-, normo-, or macrocytic subtypes.</p></div></div>
+  <div class="grid3">
+    <div class="card"><div class="card-label" style="color:#e3b341">Microcytic (MCV &lt;80 fL)</div>
+      <p>Mnemonic: <strong style="color:#e3b341">TAILS</strong><br>Thalassemia · Anemia of chronic disease · Iron deficiency · Lead poisoning · Sideroblastic anemia</p>
+      <br><p style="font-size:12px;color:var(--text-muted)">Mechanism: deficient heme or globin synthesis → small, pale RBCs</p>
+    </div>
+    <div class="card"><div class="card-label" style="color:#58a6ff">Normocytic (MCV 80–100 fL)</div>
+      <p>Causes: Acute blood loss, hemolytic anemias, anemia of chronic disease (early), aplastic anemia, renal failure (↓EPO), hypothyroidism, bone marrow infiltration</p>
+      <br><p style="font-size:12px;color:var(--text-muted)">Key: check reticulocyte count to separate high (hemolysis/loss) from low (production failure)</p>
+    </div>
+    <div class="card"><div class="card-label" style="color:#87ceeb">Macrocytic (MCV &gt;100 fL)</div>
+      <p>Megaloblastic: B12 deficiency, folate deficiency (DNA synthesis defect)<br>Non-megaloblastic: alcohol, liver disease, hypothyroidism, MDS, reticulocytosis, drugs (MTX, hydroxyurea)</p>
+    </div>
+  </div>
+  <div class="card" style="margin-bottom:.85rem"><div class="card-label" style="color:#e05c5c">Reticulocyte Count — The Key Branch Point</div>
+    <div class="grid2" style="margin-top:8px">
+      <div class="sc"><div class="sc-name" style="color:#3fb950">High reticulocytes (&gt;2–3%) = Appropriate BM response</div><div class="sc-desc">Bone marrow is working fine but RBCs are being lost or destroyed. Think: hemorrhage (acute blood loss) or hemolysis (intrinsic or extrinsic RBC destruction).</div></div>
+      <div class="sc"><div class="sc-name" style="color:#f85149">Low reticulocytes (&lt;2%) = Inadequate BM response</div><div class="sc-desc">Bone marrow is failing to produce enough RBCs. Classify by MCV → microcytic (TAILS), normocytic (aplastic, renal failure), or macrocytic (B12/folate, liver, alcohol).</div></div>
+    </div>
+  </div>
+  <div class="card" style="margin-bottom:.85rem"><div class="card-label" style="color:#e05c5c">General Clinical Features of Anemia</div>
+    <div class="grid2" style="margin-top:8px">
+      <div>
+        <div class="info-row"><span class="info-key">Fatigue / weakness</span><span class="info-val">Universal — reduced O2 delivery to muscles</span></div>
+        <div class="info-row"><span class="info-key">Pallor</span><span class="info-val">Conjunctival, palmar, mucosal — reduced Hgb</span></div>
+        <div class="info-row"><span class="info-key">Dyspnea on exertion</span><span class="info-val">Compensatory increased respiratory rate</span></div>
+        <div class="info-row"><span class="info-key">Tachycardia</span><span class="info-val">Compensatory increased cardiac output</span></div>
+      </div>
+      <div>
+        <div class="info-row"><span class="info-key">Palpitations</span><span class="info-val">Hyperdynamic circulation</span></div>
+        <div class="info-row"><span class="info-key">Angina</span><span class="info-val">In patients with underlying coronary artery disease</span></div>
+        <div class="info-row"><span class="info-key">Systolic flow murmur</span><span class="info-val">Hyperdynamic state — innocent, grade 1–2</span></div>
+        <div class="info-row"><span class="info-key">Specific symptoms</span><span class="info-val">Depend on etiology (pica in IDA, neuro symptoms in B12 deficiency)</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="pearl-box"><div class="pearl-label">Step 1 Pearls — Anemia General</div><ul class="pearl-items">
+    <li>First branch point: Is the reticulocyte count high (loss/destruction) or low (production failure)?</li>
+    <li>Second branch point (if low retics): What is the MCV? Microcytic → TAILS; Normocytic → aplastic/renal/early IDA; Macrocytic → B12/folate/alcohol/liver.</li>
+    <li>Hemolysis findings: high retics + ↑indirect bilirubin + ↑LDH + ↓haptoglobin.</li>
+    <li>RDW ↑ in iron deficiency and B12/folate deficiency (anisocytosis); RDW normal in thalassemia trait (uniform small cells).</li>
+    <li>Early iron deficiency can be normocytic — MCV drops only after prolonged depletion.</li>
+  </ul></div>
+</div>
+
+<div class="panel" id="micro">
+  <div class="panel-header">
+    <div class="panel-eyebrow" style="color:#e3b341">Microcytic Anemia · MCV &lt;80 fL</div>
+    <div class="panel-title">Microcytic Anemias</div>
+    <div class="panel-subtitle">Deficient heme or globin synthesis → small, pale RBCs · TAILS mnemonic · Iron studies distinguish subtypes</div>
+    <div class="stat-row">
+      <div class="stat-chip"><span class="sv" style="color:#e3b341">TAILS</span><span class="sl">micro mnemonic</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#f85149">IDA</span><span class="sl">most common</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#a371f7">ACD</span><span class="sl">hepcidin-driven</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#3fb950">Koilonychia</span><span class="sl">IDA sign</span></div>
+    </div>
+  </div>
+  <div class="card" style="margin-bottom:.85rem"><div class="card-label" style="color:#e3b341">Iron Studies Comparison — The Master Table</div>
+    <table class="lab-table">
+      <tr><th>Condition</th><th>Serum Iron</th><th>TIBC</th><th>Ferritin</th><th>Transferrin Sat</th><th>Retics</th><th>Key Smear Finding</th></tr>
+      <tr><td><strong>Iron deficiency (IDA)</strong></td><td class="down">↓</td><td class="up">↑</td><td class="down">↓ (earliest depletion)</td><td class="down">↓</td><td class="norm">↓/Normal</td><td>Hypochromic, microcytic; pencil cells</td></tr>
+      <tr><td><strong>Anemia of chronic disease (ACD)</strong></td><td class="down">↓</td><td class="down">↓</td><td class="up">↑ or normal (acute phase)</td><td class="down">↓</td><td class="norm">↓/Normal</td><td>Normocytic or microcytic; no specific</td></tr>
+      <tr><td><strong>Sideroblastic anemia</strong></td><td class="up">↑</td><td class="down">↓</td><td class="up">↑</td><td class="up">↑</td><td class="norm">↓</td><td>Basophilic stippling; dimorphic RBCs; ringed sideroblasts on BM</td></tr>
+      <tr><td><strong>Thalassemia trait</strong></td><td class="norm">Normal</td><td class="norm">Normal</td><td class="norm">Normal</td><td class="norm">Normal</td><td class="norm">Normal/↑</td><td>Target cells; microcytic but normal ferritin; ↑RBC count</td></tr>
+      <tr><td><strong>Lead poisoning</strong></td><td class="norm">Normal</td><td class="norm">Normal</td><td class="norm">Normal/↑</td><td class="norm">Normal</td><td class="norm">↓</td><td>Basophilic stippling (coarse); no ringed sideroblasts</td></tr>
+    </table>
+  </div>
+  <div class="grid2">
+    <div class="card"><div class="card-label" style="color:#f85149">Iron Deficiency Anemia (IDA)</div>
+      <div class="info-row"><span class="info-key">Etiology</span><span class="info-val">Chronic blood loss (GI bleeding, menorrhagia — most common adults); malabsorption (celiac, achlorhydria); poor diet (infants)</span></div>
+      <div class="info-row"><span class="info-key">Pathophysiology</span><span class="info-val">Iron stores (ferritin) depleted first → then Hgb production falls → hypochromic microcytic RBCs</span></div>
+      <div class="info-row"><span class="info-key">Clinical features</span><span class="info-val">Fatigue, pallor; pica (ice-pagophagia, dirt-geophagia); angular cheilitis; glossitis (smooth tongue); koilonychia (spoon-shaped nails)</span></div>
+      <div class="info-row"><span class="info-key">Plummer-Vinson</span><span class="info-val">Triad: IDA + dysphagia (esophageal webs) + glossitis; risk of esophageal/pharyngeal SCC</span></div>
+      <div class="info-row"><span class="info-key">Treatment</span><span class="info-val">Oral ferrous sulfate (take with vitamin C); IV iron if malabsorption; find and treat source of bleeding</span></div>
+    </div>
+    <div class="card"><div class="card-label" style="color:#a371f7">Anemia of Chronic Disease (ACD)</div>
+      <div class="info-row"><span class="info-key">Etiology</span><span class="info-val">Chronic infection, autoimmune disease (RA, SLE), malignancy, chronic kidney disease</span></div>
+      <div class="info-row"><span class="info-key">Pathophysiology</span><span class="info-val">Chronic inflammation → IL-6 → ↑hepcidin → ferroportin degradation → iron trapped in macrophages → serum iron↓ but ferritin↑ (iron is stored, not available). Blunted EPO response. Low retics.</span></div>
+      <div class="info-row"><span class="info-key">CKD-specific</span><span class="info-val">Reduced EPO production by fibrotic kidney → normocytic anemia; treat with EPO analogs (darbepoetin, epoetin alfa)</span></div>
+      <div class="info-row"><span class="info-key">Treatment</span><span class="info-val">Treat the underlying disease; ESAs if CKD; IV iron + ESA in dialysis patients</span></div>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="card"><div class="card-label" style="color:#e3b341">Sideroblastic Anemia</div>
+      <div class="info-row"><span class="info-key">Defect</span><span class="info-val">Defect in heme synthesis → iron accumulates in mitochondria → ringed sideroblasts (iron-laden mitochondria around nucleus)</span></div>
+      <div class="info-row"><span class="info-key">Causes</span><span class="info-val">Lead poisoning; alcohol; INH therapy (inhibits B6/pyridoxine — cofactor for ALA synthase); X-linked hereditary (ALA synthase gene)</span></div>
+      <div class="info-row"><span class="info-key">Smear findings</span><span class="info-val">Basophilic stippling; dimorphic RBC population; bone marrow: ringed sideroblasts (Prussian blue stain)</span></div>
+      <div class="info-row"><span class="info-key">Treatment</span><span class="info-val">Pyridoxine (B6) — especially for INH-induced and hereditary forms; treat underlying cause</span></div>
+    </div>
+    <div class="card"><div class="card-label" style="color:#39c5cf">Lead Poisoning</div>
+      <div class="info-row"><span class="info-key">Mechanism</span><span class="info-val">Lead inhibits ALA dehydratase and ferrochelatase → impaired heme synthesis; also inhibits 5'-nucleotidase → RNA accumulates → basophilic stippling</span></div>
+      <div class="info-row"><span class="info-key">Clinical features</span><span class="info-val">Children: developmental delay, cognitive impairment; adults: "LEAD" — Lead Lines (Burton lines on gums and growth plates), Encephalopathy, Abdominal pain, Drops (wrist/foot drop)</span></div>
+      <div class="info-row"><span class="info-key">Smear</span><span class="info-val">Basophilic stippling (coarse) WITHOUT ringed sideroblasts (contrast: sideroblastic anemia has both)</span></div>
+      <div class="info-row"><span class="info-key">Treatment</span><span class="info-val">Chelation: DMSA (succimer) for children; EDTA + dimercaprol for severe/encephalopathy</span></div>
+    </div>
+  </div>
+  <div class="pearl-box"><div class="pearl-label">Step 1 Pearls — Microcytic Anemias</div><ul class="pearl-items">
+    <li>IDA: ferritin↓ (first to deplete) + TIBC↑ + serum iron↓. Ferritin is the most sensitive early marker.</li>
+    <li>ACD: serum iron↓ but ferritin↑ + TIBC↓ — iron is trapped in macrophages by hepcidin. The key distinguisher from IDA.</li>
+    <li>Sideroblastic anemia: serum iron↑ + ferritin↑ + ringed sideroblasts on bone marrow. INH → give B6. Lead → give DMSA/EDTA.</li>
+    <li>Thalassemia trait: microcytic anemia with NORMAL iron studies + ELEVATED RBC count + target cells on smear. Confirm with Hgb electrophoresis.</li>
+    <li>Basophilic stippling with ringed sideroblasts = sideroblastic anemia. Basophilic stippling WITHOUT ringed sideroblasts = lead poisoning.</li>
+    <li>Pica + koilonychia + smooth tongue + esophageal webs (Plummer-Vinson) = Iron deficiency anemia.</li>
+  </ul></div>
+</div>
+
+<div class="panel" id="macro">
+  <div class="panel-header">
+    <div class="panel-eyebrow" style="color:#87ceeb">Macrocytic Anemia · MCV &gt;100 fL</div>
+    <div class="panel-title">Megaloblastic Anemia</div>
+    <div class="panel-subtitle">DNA synthesis defect → impaired cell division → megaloblasts · B12 vs Folate deficiency distinction is critical</div>
+    <div class="stat-row">
+      <div class="stat-chip"><span class="sv" style="color:#87ceeb">Hyperseg neutrophils</span><span class="sl">pathognomonic smear</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#e3b341">↑MMA</span><span class="sl">B12 only</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#f85149">Neuro deficit</span><span class="sl">B12 only (not folate)</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#3fb950">Homocysteine↑</span><span class="sl">both B12 and folate</span></div>
+    </div>
+  </div>
+  <div class="grid1"><div class="card"><div class="card-label" style="color:#87ceeb">Definition &amp; Pathophysiology</div><p>Megaloblastic anemia = defect in DNA synthesis → delayed nuclear maturation relative to cytoplasmic maturation → large cells with immature nuclei (megaloblasts in marrow; macro-ovalocytes and hypersegmented neutrophils in blood). Caused by deficiency of <strong style="color:#87ceeb">Vitamin B12</strong> or <strong style="color:#3fb950">Folate</strong> — both required for thymidine synthesis (via methylation pathways). Non-megaloblastic macrocytosis (no DNA synthesis defect): alcohol, liver disease, hypothyroidism, reticulocytosis, MDS, drugs.</p></div></div>
+  <div class="grid2">
+    <div class="card"><div class="card-label" style="color:#87ceeb">Vitamin B12 Deficiency</div>
+      <div class="info-row"><span class="info-key">Sources / RDA</span><span class="info-val">Animal products only; body stores last 3–5 years</span></div>
+      <div class="info-row"><span class="info-key">Absorption</span><span class="info-val">B12 + intrinsic factor (parietal cells) → absorbed in terminal ileum</span></div>
+      <div class="info-row"><span class="info-key">Pernicious anemia</span><span class="info-val">Autoimmune gastritis → loss of parietal cells → no intrinsic factor → B12 malabsorption; anti-parietal cell Ab and anti-IF Ab; associated with other autoimmune diseases</span></div>
+      <div class="info-row"><span class="info-key">Other causes</span><span class="info-val">Strict veganism; gastrectomy / bariatric surgery; terminal ileal disease (Crohn's); bacterial overgrowth; fish tapeworm (D. latum); metformin (impairs absorption)</span></div>
+      <div class="info-row"><span class="info-key">Neurologic findings</span><span class="info-val">Subacute combined degeneration of spinal cord: dorsal columns (vibration/proprioception loss) + lateral corticospinal tracts (UMN signs); peripheral neuropathy; dementia</span></div>
+      <div class="info-row"><span class="info-key">Treatment</span><span class="info-val">IM cyanocobalamin or hydroxocobalamin (if malabsorption); high-dose oral B12 can work if some IF remains</span></div>
+    </div>
+    <div class="card"><div class="card-label" style="color:#3fb950">Folate Deficiency</div>
+      <div class="info-row"><span class="info-key">Sources</span><span class="info-val">Green leafy vegetables; fruit; liver; body stores last only 3–4 months</span></div>
+      <div class="info-row"><span class="info-key">Absorption</span><span class="info-val">Absorbed in proximal small intestine (jejunum) — not terminal ileum</span></div>
+      <div class="info-row"><span class="info-key">Common causes</span><span class="info-val">Poor diet (alcoholics, elderly); malabsorption (celiac disease); increased demand (pregnancy, hemolytic anemia); drugs (methotrexate, trimethoprim, phenytoin)</span></div>
+      <div class="info-row"><span class="info-key">Drug mechanisms</span><span class="info-val">Methotrexate and trimethoprim inhibit dihydrofolate reductase → folate deficiency. Phenytoin impairs folate absorption.</span></div>
+      <div class="info-row"><span class="info-key">No neurologic symptoms</span><span class="info-val">Folate deficiency does NOT cause subacute combined degeneration — this distinguishes it from B12 deficiency</span></div>
+      <div class="info-row"><span class="info-key">Pregnancy risk</span><span class="info-val">Neural tube defects (spina bifida, anencephaly); supplement 400–800 mcg daily preconceptually</span></div>
+      <div class="info-row"><span class="info-key">Treatment</span><span class="info-val">Oral folic acid supplementation; CAUTION — never give folate without B12 if B12 deficiency possible (folate corrects anemia but worsens neurologic damage)</span></div>
+    </div>
+  </div>
+  <div class="card" style="margin-bottom:.85rem"><div class="card-label" style="color:#87ceeb">B12 vs Folate — The Critical Distinguishing Lab</div>
+    <table class="lab-table">
+      <tr><th>Lab</th><th>B12 Deficiency</th><th>Folate Deficiency</th></tr>
+      <tr><td>Serum B12</td><td class="down">↓</td><td class="norm">Normal</td></tr>
+      <tr><td>Serum folate</td><td class="norm">Normal</td><td class="down">↓</td></tr>
+      <tr><td>Methylmalonic acid (MMA)</td><td class="up">↑↑ (elevated)</td><td class="norm">Normal ← KEY DISTINGUISHER</td></tr>
+      <tr><td>Homocysteine</td><td class="up">↑</td><td class="up">↑ (both elevated)</td></tr>
+      <tr><td>Neurologic symptoms</td><td style="color:#f85149">YES — subacute combined degeneration</td><td style="color:#3fb950">NO</td></tr>
+      <tr><td>Schilling test (historical)</td><td>Localizes cause of B12 deficiency</td><td>Not applicable</td></tr>
+    </table>
+  </div>
+  <div class="hl hl-red">CRITICAL: Never treat suspected B12 deficiency with folate alone. Folate corrects the hematologic findings but allows the irreversible neurologic damage (subacute combined degeneration) to progress undetected. Always check serum B12 and MMA first.</div>
+  <div class="pearl-box"><div class="pearl-label">Step 1 Pearls — Megaloblastic Anemia</div><ul class="pearl-items">
+    <li>Hypersegmented neutrophils (&gt;5 lobes) on smear = megaloblastic anemia; earliest and most specific finding.</li>
+    <li>↑MMA + ↑homocysteine = B12 deficiency. ↑Homocysteine only (normal MMA) = folate deficiency.</li>
+    <li>Neurologic symptoms (subacute combined degeneration) = B12 deficiency ONLY. Folate deficiency has NO neuro involvement.</li>
+    <li>Pernicious anemia: autoimmune → anti-parietal cell Ab + anti-intrinsic factor Ab → no B12 absorption → IM B12 replacement.</li>
+    <li>Methotrexate and trimethoprim inhibit dihydrofolate reductase → folate deficiency → macrocytic anemia.</li>
+    <li>Crohn's disease affecting terminal ileum → B12 malabsorption (terminal ileum is the only absorption site for B12-IF complex).</li>
+  </ul></div>
+</div>
+
+<div class="panel" id="thal">
+  <div class="panel-header">
+    <div class="panel-eyebrow" style="color:#a371f7">Hemoglobinopathy · Globin Chain Production</div>
+    <div class="panel-title">Thalassemia</div>
+    <div class="panel-subtitle">Inherited reduction in alpha or beta globin chain synthesis · Autosomal recessive · Mediterranean, African, Southeast Asian populations</div>
+    <div class="stat-row">
+      <div class="stat-chip"><span class="sv" style="color:#a371f7">Target cells</span><span class="sl">smear hallmark</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#3fb950">Normal iron</span><span class="sl">distinguishes from IDA</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#e3b341">Hgb electrophoresis</span><span class="sl">diagnostic</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#f85149">High RBC count</span><span class="sl">vs IDA (low RBC)</span></div>
+    </div>
+  </div>
+  <div class="grid1"><div class="card"><div class="card-label" style="color:#a371f7">Definition &amp; Pathophysiology</div><p>Thalassemias are inherited autosomal recessive disorders of globin chain synthesis. Reduced production of one chain type → relative excess of the other → excess chains precipitate → damage RBC membrane → hemolysis and ineffective erythropoiesis. Iron studies are <strong style="color:#3fb950">normal</strong> (iron absorption intact), which is the key distinguisher from iron deficiency anemia. Compensatory: ↑HbA2 and HbF in beta-thalassemia; bone marrow expands; extramedullary hematopoiesis.</p></div></div>
+  <div class="grid2">
+    <div class="card"><div class="card-label" style="color:#a371f7">Beta-Thalassemia</div>
+      <div class="info-row"><span class="info-key">Gene defect</span><span class="info-val">Point mutations in beta-globin gene (HBB); reduced (β+) or absent (β0) beta chains; excess alpha chains precipitate</span></div>
+      <div class="info-row"><span class="info-key">Beta-thal minor (trait)</span><span class="info-val">β/β+ or β/β0 — one defective allele; asymptomatic carrier; mild microcytic anemia</span></div>
+      <div class="info-row"><span class="info-key">Beta-thal intermedia</span><span class="info-val">Moderate anemia; occasional transfusions; splenomegaly</span></div>
+      <div class="info-row"><span class="info-key">Beta-thal major (Cooley anemia)</span><span class="info-val">β0/β0 — severe; presents at 6–12 months (when HbF replaced by HbA); severe microcytic anemia (Hgb ≤6 g/dL); transfusion-dependent</span></div>
+      <div class="info-row"><span class="info-key">Clinical features (major)</span><span class="info-val">Frontal bossing; prominent malar eminence; crew-cut skull X-ray (marrow expansion); hepatosplenomegaly; failure to thrive; jaundice</span></div>
+      <div class="info-row"><span class="info-key">Hgb electrophoresis</span><span class="info-val">↑HbA2 (&gt;3.5%); ↑HbF; absent or reduced HbA in major</span></div>
+    </div>
+    <div class="card"><div class="card-label" style="color:#39c5cf">Alpha-Thalassemia</div>
+      <div class="info-row"><span class="info-key">Gene defect</span><span class="info-val">Deletion of alpha-globin genes (1–4 genes affected); excess beta chains → HbH (β4 tetramer)</span></div>
+      <div class="info-row"><span class="info-key">1 gene deleted</span><span class="info-val">Silent carrier; asymptomatic; normal CBC</span></div>
+      <div class="info-row"><span class="info-key">2 genes deleted</span><span class="info-val">Alpha-thal trait; mild microcytic anemia; often asymptomatic</span></div>
+      <div class="info-row"><span class="info-key">3 genes deleted</span><span class="info-val">HbH disease (β4 tetramers); moderate hemolytic anemia; splenomegaly; Heinz bodies</span></div>
+      <div class="info-row"><span class="info-key">4 genes deleted</span><span class="info-val">Hb Bart's hydrops fetalis (γ4 tetramers); incompatible with life; stillbirth or death shortly after birth</span></div>
+      <div class="info-row"><span class="info-key">Electrophoresis</span><span class="info-val">Normal in adult with alpha-thal trait (proportional decrease — no excess of any chain type); HbH on electrophoresis in 3-gene deletion</span></div>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="card"><div class="card-label" style="color:#a371f7">Workup</div>
+      <div class="info-row"><span class="info-key">CBC</span><span class="info-val">Microcytic anemia with ELEVATED RBC count (contrast: IDA has low RBC count)</span></div>
+      <div class="info-row"><span class="info-key">Iron studies</span><span class="info-val">Normal (ferritin, serum iron, TIBC all normal) — key to exclude IDA</span></div>
+      <div class="info-row"><span class="info-key">Blood smear</span><span class="info-val">Target cells, teardrop cells, basophilic stippling, nucleated RBCs (in major)</span></div>
+      <div class="info-row"><span class="info-key">Hgb electrophoresis</span><span class="info-val">Definitive — shows ↑HbA2/HbF (beta-thal); HbH or Hb Bart's (alpha-thal)</span></div>
+    </div>
+    <div class="card"><div class="card-label" style="color:#a371f7">Treatment</div>
+      <div class="info-row"><span class="info-key">Thalassemia trait/minor</span><span class="info-val">No treatment; genetic counseling; do NOT give iron supplementation</span></div>
+      <div class="info-row"><span class="info-key">Thalassemia major</span><span class="info-val">Regular RBC transfusions (every 2–4 weeks); iron chelation (deferoxamine, deferasirox) to prevent iron overload from transfusions</span></div>
+      <div class="info-row"><span class="info-key">Iron overload complications</span><span class="info-val">Dilated cardiomyopathy (main cause of death), liver cirrhosis, endocrine dysfunction (hypogonadism, diabetes, hypothyroid)</span></div>
+      <div class="info-row"><span class="info-key">Curative</span><span class="info-val">Allogeneic BMT (hematopoietic stem cell transplant); gene therapy emerging</span></div>
+      <div class="info-row"><span class="info-key">Hydroxyurea</span><span class="info-val">Increases HbF production; helpful in beta-thal intermedia</span></div>
+    </div>
+  </div>
+  <div class="pearl-box"><div class="pearl-label">Step 1 Pearls — Thalassemia</div><ul class="pearl-items">
+    <li>Thalassemia trait: microcytic anemia + NORMAL iron studies + ELEVATED RBC count + target cells. Confirm with Hgb electrophoresis.</li>
+    <li>Beta-thal major: presents 6–12 months when HbF fades. Frontal bossing + crew-cut skull X-ray (marrow expansion) + hepatosplenomegaly + transfusion-dependent.</li>
+    <li>Alpha-thal: 4 genes, 4 presentations. 4 deleted = hydrops fetalis (incompatible with life). Normal electrophoresis in trait (2 genes deleted).</li>
+    <li>Do NOT give iron to thalassemia trait — iron studies are normal. Iron supplementation causes iron overload.</li>
+    <li>Target cells mnemonic HALT: HbC disease, Asplenia, Liver disease, Thalassemia.</li>
+    <li>Iron overload from chronic transfusions: chelation with deferoxamine or deferasirox prevents cardiomyopathy and cirrhosis.</li>
+  </ul></div>
+</div>
+
+<div class="panel" id="scd">
+  <div class="panel-header">
+    <div class="panel-eyebrow" style="color:#f85149">Hemoglobinopathy · HbS Mutation</div>
+    <div class="panel-title">Sickle Cell Disease (SCD)</div>
+    <div class="panel-subtitle">Autosomal recessive · African American population · HbSS most severe · Vaso-occlusion drives morbidity</div>
+    <div class="stat-row">
+      <div class="stat-chip"><span class="sv" style="color:#f85149">Glu→Val</span><span class="sl">β-globin codon 6</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#e3b341">Hypoxia</span><span class="sl">triggers sickling</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#3fb950">Hydroxyurea</span><span class="sl">↑HbF prevents sickling</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#58a6ff">Salmonella</span><span class="sl">osteomyelitis pathogen</span></div>
+    </div>
+  </div>
+  <div class="grid1"><div class="card"><div class="card-label" style="color:#f85149">Definition &amp; Pathophysiology</div><p>Single nucleotide substitution in beta-globin gene: <strong style="color:#f85149">GAG→GTG → Glutamate→Valine at position 6</strong>. HbS under deoxygenated conditions forms insoluble polymers → sickling → (1) vaso-occlusion: rigid sickled RBCs + endothelial adhesion + leukocytes → microvascular occlusion → ischemia/infarction; (2) hemolysis: sickled cells destroyed in spleen → chronic normocytic hemolytic anemia. Triggers: <strong style="color:#e3b341">hypoxia, dehydration, acidosis, cold, infection</strong>. HbS trait (HbAS) is protective against P. falciparum malaria.</p></div></div>
+  <div class="grid2">
+    <div class="card"><div class="card-label" style="color:#f85149">Clinical Features — Crises &amp; Complications</div>
+      <div class="info-row"><span class="info-key">Vaso-occlusive crisis</span><span class="info-val">Most common crisis; severe bone pain (most common) and organ ischemia; triggers: infection, dehydration, cold, stress</span></div>
+      <div class="info-row"><span class="info-key">Dactylitis</span><span class="info-val">Painful swelling of hands and feet — classic first presentation in children &lt;2 years</span></div>
+      <div class="info-row"><span class="info-key">Acute chest syndrome</span><span class="info-val">Fever + new pulmonary infiltrates + chest pain + hypoxia; leading cause of death; treat with exchange transfusion + antibiotics + incentive spirometry</span></div>
+      <div class="info-row"><span class="info-key">Stroke</span><span class="info-val">Common in children; annual transcranial Doppler screening age 2–16; chronic transfusion therapy if high risk</span></div>
+      <div class="info-row"><span class="info-key">Aplastic crisis</span><span class="info-val">Parvovirus B19 infects erythroid precursors → transient cessation of RBC production → severe acute anemia</span></div>
+      <div class="info-row"><span class="info-key">Splenic sequestration</span><span class="info-val">Massive sudden splenic pooling → hypovolemia + acute anemia + splenomegaly shock; young children; life-threatening</span></div>
+      <div class="info-row"><span class="info-key">Autosplenectomy</span><span class="info-val">Repeated splenic infarctions → functional asplenia by age 5 → Howell-Jolly bodies on smear; susceptibility to encapsulated bacteria (pneumococcal sepsis)</span></div>
+      <div class="info-row"><span class="info-key">Osteomyelitis</span><span class="info-val">Salmonella species (most common in SCD) &amp; S. aureus; bone infarctions create avascular environment</span></div>
+      <div class="info-row"><span class="info-key">Avascular necrosis</span><span class="info-val">Femoral head most common; vaso-occlusion → bone ischemia</span></div>
+      <div class="info-row"><span class="info-key">Renal</span><span class="info-val">Papillary necrosis; inability to concentrate urine; nephrotic syndrome</span></div>
+      <div class="info-row"><span class="info-key">Priapism</span><span class="info-val">Vaso-occlusion of penile vasculature; risk of impotence</span></div>
+    </div>
+    <div class="card"><div class="card-label" style="color:#f85149">Workup &amp; Treatment</div>
+      <div class="info-row"><span class="info-key">Blood smear</span><span class="info-val">Sickle cells (crescent-shaped); Howell-Jolly bodies (asplenia); target cells; polychromasia (retics)</span></div>
+      <div class="info-row"><span class="info-key">Hgb electrophoresis</span><span class="info-val">HbSS: predominantly HbS; absent HbA; elevated HbF (2–20%); elevated HbA2</span></div>
+      <div class="info-row"><span class="info-key">Labs</span><span class="info-val">Chronic hemolytic anemia (Hgb 6–9); ↑retics; ↑indirect bilirubin; ↑LDH; ↓haptoglobin; elevated WBC</span></div>
+      <div class="info-row"><span class="info-key">Newborn screening</span><span class="info-val">Hgb electrophoresis at birth — mandated in all US states</span></div>
+      <div class="info-row"><span class="info-key">Hydroxyurea</span><span class="info-val">Increases HbF production → HbF inhibits HbS polymerization → fewer sickling episodes; also reduces WBC and RBC adhesiveness</span></div>
+      <div class="info-row"><span class="info-key">Vaccinations</span><span class="info-val">Pneumococcal, meningococcal, H. influenzae (asplenic); annual influenza</span></div>
+      <div class="info-row"><span class="info-key">Prophylactic penicillin</span><span class="info-val">Start at 2 months; continue to age 5 (minimally) — prevents pneumococcal sepsis</span></div>
+      <div class="info-row"><span class="info-key">Acute VOC management</span><span class="info-val">IV fluids + opioid analgesics + O2 + folic acid; exchange transfusion for acute chest syndrome / stroke</span></div>
+      <div class="info-row"><span class="info-key">Curative</span><span class="info-val">Allogeneic BMT (hematopoietic stem cell transplant); gene therapy (betibeglogene gene therapy now FDA-approved)</span></div>
+    </div>
+  </div>
+  <div class="hl hl-red">Acute Chest Syndrome: fever + new pulmonary infiltrate + chest pain + ↓O2 sat in SCD patient = medical emergency. Most common cause of death. Treat with exchange transfusion + broad-spectrum antibiotics + incentive spirometry + O2.</div>
+  <div class="pearl-box"><div class="pearl-label">Step 1 Pearls — Sickle Cell Disease</div><ul class="pearl-items">
+    <li>Mutation: GAG→GTG = Glu→Val at position 6 of beta-globin. HbSS = homozygous (disease). HbAS = trait (protective against P. falciparum malaria).</li>
+    <li>Triggers for sickling: Hypoxia, Dehydration, Acidosis, Cold, Infection — remember HDACI.</li>
+    <li>Dactylitis (hand-foot syndrome) = first presentation of SCD in children under 2 years old.</li>
+    <li>Parvovirus B19 → aplastic crisis (shuts down erythroid precursors → sudden severe anemia).</li>
+    <li>Salmonella species → osteomyelitis in SCD (S. aureus still most common in general population).</li>
+    <li>Autosplenectomy by age 5 → Howell-Jolly bodies → give prophylactic penicillin + vaccines (pneumococcal, meningococcal, Hib).</li>
+    <li>Hydroxyurea increases HbF → HbF inhibits HbS polymerization → fewer crises.</li>
+    <li>Acute chest syndrome = leading cause of death in SCD → exchange transfusion is key.</li>
+  </ul></div>
+</div>
+
+<div class="panel" id="malaria">
+  <div class="panel-header">
+    <div class="panel-eyebrow" style="color:#3fb950">Infectious Disease · Protozoan Parasite</div>
+    <div class="panel-title">Malaria</div>
+    <div class="panel-subtitle">Plasmodium species · Female Anopheles mosquito · P. falciparum most severe · Tropical and subtropical regions</div>
+    <div class="stat-row">
+      <div class="stat-chip"><span class="sv" style="color:#3fb950">P. falciparum</span><span class="sl">most severe / deadly</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#e3b341">Hypnozoites</span><span class="sl">vivax/ovale relapse</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#58a6ff">Giemsa smear</span><span class="sl">gold standard Dx</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#f85149">Artesunate</span><span class="sl">severe malaria Tx</span></div>
+    </div>
+  </div>
+  <div class="grid1"><div class="card"><div class="card-label" style="color:#3fb950">Definition &amp; Life Cycle</div><p>Malaria is caused by Plasmodium protozoa transmitted by the bite of female Anopheles mosquitoes. Five species infect humans: <em>P. falciparum, P. vivax, P. ovale, P. malariae, P. knowlesi</em>. Life cycle: (1) female Anopheles injects sporozoites → (2) sporozoites travel to liver → hepatic schizogony (asymptomatic) → (3) liver schizonts rupture, releasing merozoites → (4) merozoites infect RBCs → erythrocytic schizogony → (5) schizont rupture → fever/symptoms + release of new merozoites. P. vivax and P. ovale form dormant hypnozoites in liver → reactivate weeks to years later → relapses.</p></div></div>
+  <div class="grid2">
+    <div class="card"><div class="card-label" style="color:#3fb950">Species Comparison</div>
+      <table class="lab-table">
+        <tr><th>Species</th><th>Fever Cycle</th><th>RBCs Infected</th><th>Key Features</th></tr>
+        <tr><td><strong style="color:#f85149">P. falciparum</strong></td><td>Irregular / continuous</td><td>All ages (high parasitemia)</td><td>Banana-shaped gametocytes; multiple ring forms/RBC; cerebral malaria; most deadly; NO hypnozoites</td></tr>
+        <tr><td><strong style="color:#e3b341">P. vivax</strong></td><td>Tertian (48h)</td><td>Reticulocytes (young RBCs)</td><td>Schüffner's dots (stippling); enlarged RBCs; hypnozoites → relapses; treat with primaquine</td></tr>
+        <tr><td><strong style="color:#a371f7">P. ovale</strong></td><td>Tertian (48h)</td><td>Reticulocytes</td><td>Schüffner's dots; oval/fimbriated RBCs; hypnozoites → relapses; treat with primaquine</td></tr>
+        <tr><td><strong style="color:#58a6ff">P. malariae</strong></td><td>Quartan (72h)</td><td>Senescent (old) RBCs</td><td>Band-form trophozoites; rosette schizonts; nephrotic syndrome; no hypnozoites</td></tr>
+        <tr><td><strong style="color:#3fb950">P. knowlesi</strong></td><td>Quotidian (24h)</td><td>All ages</td><td>Southeast Asia; rapid progression; can be severe</td></tr>
+      </table>
+    </div>
+    <div class="card"><div class="card-label" style="color:#3fb950">Clinical Features</div>
+      <div class="info-row"><span class="info-key">Classic malaria paroxysm</span><span class="info-val">Cold (rigors/chills) → Hot (high fever 39–41°C) → Wet (drenching diaphoresis) → afebrile — synchronous with RBC schizont rupture</span></div>
+      <div class="info-row"><span class="info-key">General symptoms</span><span class="info-val">Headache, myalgia, fatigue, nausea, vomiting, splenomegaly, anemia, thrombocytopenia</span></div>
+      <div class="info-row"><span class="info-key">Cerebral malaria (P. falciparum)</span><span class="info-val">Sequestration of infected RBCs in brain microvasculature → encephalopathy, seizures, coma; high mortality</span></div>
+      <div class="info-row"><span class="info-key">Severe falciparum</span><span class="info-val">Acute renal failure (blackwater fever — hemoglobinuria); severe anemia; ARDS; hypoglycemia; shock</span></div>
+      <div class="info-row"><span class="info-key">P. malariae</span><span class="info-val">Nephrotic syndrome (immune complex deposition)</span></div>
+      <div class="info-row"><span class="info-key">Protective factors</span><span class="info-val">Sickle cell trait (HbAS), G6PD deficiency, thalassemia trait, Duffy antigen negative (P. vivax cannot enter without Duffy)</span></div>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="card"><div class="card-label" style="color:#3fb950">Diagnosis</div>
+      <div class="info-row"><span class="info-key">Giemsa-stained smear</span><span class="info-val">Gold standard — thick smear (screening) + thin smear (species ID); examine at least 200 fields before calling negative</span></div>
+      <div class="info-row"><span class="info-key">Rapid diagnostic test (RDT)</span><span class="info-val">Detects Plasmodium antigens (HRP-2 for P. falciparum); quick but lower sensitivity</span></div>
+      <div class="info-row"><span class="info-key">PCR</span><span class="info-val">Most sensitive and specific; useful for low parasitemia and species differentiation</span></div>
+      <div class="info-row"><span class="info-key">Labs</span><span class="info-val">Normocytic hemolytic anemia; ↑indirect bilirubin; ↑LDH; thrombocytopenia; hypoglycemia in severe falciparum</span></div>
+    </div>
+    <div class="card"><div class="card-label" style="color:#3fb950">Treatment</div>
+      <div class="info-row"><span class="info-key">Uncomplicated P. falciparum</span><span class="info-val">Artemisinin-based combination therapy (ACT) — artemether-lumefantrine (Coartem); or atovaquone-proguanil</span></div>
+      <div class="info-row"><span class="info-key">Severe falciparum</span><span class="info-val">IV artesunate (preferred over quinine); ICU monitoring; exchange transfusion if very high parasitemia</span></div>
+      <div class="info-row"><span class="info-key">P. vivax / P. ovale</span><span class="info-val">Chloroquine (if susceptible area) + primaquine (eliminates hypnozoites — prevents relapse); check G6PD status first!</span></div>
+      <div class="info-row"><span class="info-key">P. malariae</span><span class="info-val">Chloroquine (generally still sensitive); no hypnozoites → no primaquine needed</span></div>
+      <div class="info-row"><span class="info-key">Prophylaxis</span><span class="info-val">Atovaquone-proguanil; doxycycline; mefloquine; chloroquine (sensitive areas only)</span></div>
+    </div>
+  </div>
+  <div class="hl hl-amber">Check G6PD status before giving primaquine. Primaquine causes oxidative hemolysis in G6PD-deficient patients. This is a critical pre-treatment step before prescribing primaquine for hypnozoite eradication in P. vivax/ovale.</div>
+  <div class="pearl-box"><div class="pearl-label">Step 1 Pearls — Malaria</div><ul class="pearl-items">
+    <li>P. falciparum: most severe; banana-shaped gametocytes; multiple ring forms per RBC; no hypnozoites; cerebral malaria; blackwater fever (hemoglobinuria).</li>
+    <li>P. vivax and P. ovale: hypnozoites in liver → relapses months/years later → primaquine eradicates liver stage. Check G6PD first!</li>
+    <li>P. malariae: quartan fever (72h cycle); nephrotic syndrome; infects senescent RBCs; no hypnozoites.</li>
+    <li>Schüffner's dots on smear = P. vivax or P. ovale. Banana-shaped gametocytes = P. falciparum.</li>
+    <li>Duffy antigen is required for P. vivax RBC invasion → Duffy-negative individuals (West Africans) are naturally resistant to P. vivax.</li>
+    <li>Sickle cell trait and G6PD deficiency are protective against P. falciparum malaria.</li>
+    <li>IV artesunate preferred over IV quinine for severe falciparum (better efficacy, fewer side effects).</li>
+  </ul></div>
+</div>
+
+<div class="panel" id="coag">
+  <div class="panel-header">
+    <div class="panel-eyebrow" style="color:#39c5cf">Hemostasis · Coagulation Pathways</div>
+    <div class="panel-title">Coagulation Cascade &amp; Disorders</div>
+    <div class="panel-subtitle">Intrinsic + extrinsic pathways → common pathway → fibrin clot · PT tests extrinsic · PTT tests intrinsic</div>
+    <div class="stat-row">
+      <div class="stat-chip"><span class="sv" style="color:#39c5cf">PT (INR)</span><span class="sl">extrinsic pathway</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#e3b341">PTT</span><span class="sl">intrinsic pathway</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#f85149">DIC</span><span class="sl">both PT and PTT ↑</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#3fb950">TTP</span><span class="sl">ADAMTS13 deficiency</span></div>
+    </div>
+  </div>
+  <div class="grid1"><div class="card"><div class="card-label" style="color:#39c5cf">Coagulation Cascade Overview</div>
+    <div class="subgrid">
+      <div class="sc"><div class="sc-name" style="color:#39c5cf">Extrinsic Pathway (PT/INR)</div><div class="sc-desc">Tissue factor (III) + Factor VII → activates Factor X. "SITS" — Seven Is The Start. PT/INR elevated if factors in this pathway are deficient (VII, X, V, II, fibrinogen). Warfarin blocks vitamin K-dependent factors (II, VII, IX, X, Protein C, S).</div></div>
+      <div class="sc"><div class="sc-name" style="color:#e3b341">Intrinsic Pathway (PTT)</div><div class="sc-desc">Contact activation → XII → XI → IX → VIII → X. "PET" → PTT tests Eight and nine (IXa + VIIIa activate X). PTT elevated if: hemophilia A (VIII↓), hemophilia B (IX↓), heparin (activates antithrombin → inactivates IIa/Xa). vWF carries VIII — vWD can ↑PTT.</div></div>
+      <div class="sc"><div class="sc-name" style="color:#3fb950">Common Pathway (both PT &amp; PTT)</div><div class="sc-desc">Factor X → Xa (with Va) → prothrombin (II) → thrombin (IIa) → fibrinogen (I) → fibrin. XIII crosslinks fibrin. Deficiency here affects both PT and PTT.</div></div>
+      <div class="sc"><div class="sc-name" style="color:#a371f7">Primary Hemostasis (Bleeding Time)</div><div class="sc-desc">Platelet plug formation: vascular injury → vWF → platelet GpIb binding (adhesion) → ADP/TXA2 → platelet aggregation (GpIIb/IIIa). BT elevated in: platelet disorders, vWD, aspirin/NSAIDs, uremia.</div></div>
+    </div>
+  </div></div>
+  <div class="card" style="margin-bottom:.85rem"><div class="card-label" style="color:#39c5cf">Lab Pattern Recognition — Master Coagulation Table</div>
+    <table class="lab-table">
+      <tr><th>Condition</th><th>PT</th><th>PTT</th><th>Platelets</th><th>BT</th><th>Fibrinogen</th><th>Key Distinguishing Feature</th></tr>
+      <tr><td><strong>Hemophilia A (VIII↓)</strong></td><td class="norm">Normal</td><td class="up">↑</td><td class="norm">Normal</td><td class="norm">Normal</td><td class="norm">Normal</td><td>Hemarthroses; corrects with mixing study</td></tr>
+      <tr><td><strong>Hemophilia B (IX↓)</strong></td><td class="norm">Normal</td><td class="up">↑</td><td class="norm">Normal</td><td class="norm">Normal</td><td class="norm">Normal</td><td>Clinically identical to A; distinguish by factor assay</td></tr>
+      <tr><td><strong>Von Willebrand disease</strong></td><td class="norm">Normal</td><td class="up">↑ (Type 1/3) or Normal</td><td class="norm">Normal</td><td class="up">↑</td><td class="norm">Normal</td><td>Mucosal bleeding; ↓ristocetin cofactor activity</td></tr>
+      <tr><td><strong>ITP</strong></td><td class="norm">Normal</td><td class="norm">Normal</td><td class="down">↓↓</td><td class="up">↑</td><td class="norm">Normal</td><td>Anti-platelet IgG antibodies; megakaryocytes ↑ in marrow</td></tr>
+      <tr><td><strong>TTP</strong></td><td class="norm">Normal</td><td class="norm">Normal</td><td class="down">↓↓</td><td class="up">↑</td><td class="norm">Normal</td><td>ADAMTS13 deficiency; MAHA; schistocytes; FAT RN pentad</td></tr>
+      <tr><td><strong>DIC</strong></td><td class="up">↑↑</td><td class="up">↑↑</td><td class="down">↓</td><td class="up">↑</td><td class="down">↓</td><td>D-dimer ↑↑; consumptive coagulopathy; sepsis/trauma/obstetric</td></tr>
+      <tr><td><strong>Liver disease</strong></td><td class="up">↑</td><td class="up">↑ (variable)</td><td class="down">↓ (splenomegaly)</td><td class="up">↑</td><td class="down">↓</td><td>Reduced synthesis of all factors; ↑PT earliest; fibrinogen ↓ late</td></tr>
+      <tr><td><strong>Warfarin</strong></td><td class="up">↑↑</td><td class="up">↑ (mild)</td><td class="norm">Normal</td><td class="norm">Normal</td><td class="norm">Normal</td><td>Blocks vit K factors II, VII, IX, X, Protein C, S; reversal: Vit K or FFP</td></tr>
+      <tr><td><strong>Heparin (UFH)</strong></td><td class="norm">Normal</td><td class="up">↑↑</td><td class="norm">Normal</td><td class="norm">Normal</td><td class="norm">Normal</td><td>Activates antithrombin → inhibits IIa and Xa; reversal: protamine sulfate</td></tr>
+      <tr><td><strong>Factor V Leiden</strong></td><td class="norm">Normal</td><td class="norm">Normal</td><td class="norm">Normal</td><td class="norm">Normal</td><td class="norm">Normal</td><td>Hypercoagulable; DVT/PE; resistance to activated protein C</td></tr>
+      <tr><td><strong>Vitamin K deficiency</strong></td><td class="up">↑ (earliest)</td><td class="up">↑</td><td class="norm">Normal</td><td class="norm">Normal</td><td class="norm">Normal</td><td>Neonates (no gut flora); warfarin; malabsorption; PT↑ before PTT (VII shortest half-life)</td></tr>
+    </table>
+  </div>
+  <div class="pearl-box"><div class="pearl-label">Step 1 Pearls — Coagulation Cascade</div><ul class="pearl-items">
+    <li>PT tests extrinsic (VII) and common pathway. PTT tests intrinsic (VIII, IX, XI, XII) and common pathway.</li>
+    <li>Vitamin K-dependent factors: II, VII, IX, X, Protein C, S (mnemonic: "1972" → factors 2,7,9,10).</li>
+    <li>Factor VII has the shortest half-life → PT/INR elevated first in warfarin therapy and liver disease.</li>
+    <li>TTP: ADAMTS13 deficiency → ultralarge vWF multimers → microthrombi → FAT RN pentad: Fever, microAngiopathic hemolytic anemia (schistocytes), Thrombocytopenia, Renal failure, Neurologic changes. Treat with plasmapheresis.</li>
+    <li>DIC: EVERYTHING is consumed → PT↑, PTT↑, fibrinogen↓, platelets↓, D-dimer↑↑. Causes: sepsis, trauma, obstetric complications, malignancy.</li>
+    <li>Mixing study: mix patient plasma with normal plasma. If PTT corrects → factor DEFICIENCY (hemophilia). If PTT does NOT correct → INHIBITOR (autoantibody against factor).</li>
+  </ul></div>
+</div>
+
+<div class="panel" id="hemo">
+  <div class="panel-header">
+    <div class="panel-eyebrow" style="color:#ff7b72">Congenital Coagulopathy · Intrinsic Pathway</div>
+    <div class="panel-title">Hemophilia A &amp; B</div>
+    <div class="panel-subtitle">X-linked recessive · Almost exclusively males · Factor VIII (A) and Factor IX (B) deficiency · Hemarthroses are classic</div>
+    <div class="stat-row">
+      <div class="stat-chip"><span class="sv" style="color:#ff7b72">Factor VIII↓</span><span class="sl">Hemophilia A (classic)</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#e3b341">Factor IX↓</span><span class="sl">Hemophilia B (Christmas)</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#58a6ff">↑PTT only</span><span class="sl">PT normal</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#3fb950">Hemarthroses</span><span class="sl">classic clinical sign</span></div>
+    </div>
+  </div>
+  <div class="grid1"><div class="card"><div class="card-label" style="color:#ff7b72">Definition &amp; Pathophysiology</div><p>Hemophilia A and B are <strong style="color:#ff7b72">X-linked recessive</strong> disorders — almost exclusively males affected (females are carriers, occasionally symptomatic). <strong>Hemophilia A</strong>: deficiency of Factor VIII; most common (80% of hemophilias). <strong>Hemophilia B (Christmas disease)</strong>: deficiency of Factor IX. Both factors are in the intrinsic pathway → IXa + VIIIa together activate Factor X. Deficiency → inadequate thrombin generation → failure to form stable fibrin clot → bleeding into deep tissues (joints, muscles). Both are clinically indistinguishable — only factor assay differentiates them. ~1/3 of cases arise from spontaneous mutation (no family history).</p></div></div>
+  <div class="grid2">
+    <div class="card"><div class="card-label" style="color:#ff7b72">Clinical Features</div>
+      <div class="info-row"><span class="info-key">Hemarthroses</span><span class="info-val">Classic — bleeding into joints (knees most common); swollen, warm, painful; repeated episodes → chronic arthropathy</span></div>
+      <div class="info-row"><span class="info-key">Deep muscle bleeds</span><span class="info-val">Iliopsoas hematoma; compartment syndrome risk; nerve compression</span></div>
+      <div class="info-row"><span class="info-key">Easy bruising</span><span class="info-val">Large ecchymoses; subcutaneous hematomas after minor trauma</span></div>
+      <div class="info-row"><span class="info-key">Post-surgical bleeding</span><span class="info-val">Delayed or prolonged bleeding after procedures/surgery</span></div>
+      <div class="info-row"><span class="info-key">Intracranial hemorrhage</span><span class="info-val">Life-threatening; can occur spontaneously in severe disease</span></div>
+      <div class="info-row"><span class="info-key">Severity</span><span class="info-val">Severe (&lt;1% factor activity): spontaneous bleeds; Moderate (1–5%): bleeds with minor trauma; Mild (5–40%): bleeds only with major surgery/injury</span></div>
+    </div>
+    <div class="card"><div class="card-label" style="color:#ff7b72">Workup &amp; Treatment</div>
+      <div class="info-row"><span class="info-key">PTT</span><span class="info-val">Elevated (intrinsic pathway affected)</span></div>
+      <div class="info-row"><span class="info-key">PT</span><span class="info-val">Normal (extrinsic pathway intact)</span></div>
+      <div class="info-row"><span class="info-key">Bleeding time</span><span class="info-val">Normal (platelets function normally)</span></div>
+      <div class="info-row"><span class="info-key">Factor assays</span><span class="info-val">VIII activity (Hemophilia A) or IX activity (Hemophilia B) — only way to distinguish</span></div>
+      <div class="info-row"><span class="info-key">Mixing study</span><span class="info-val">PTT corrects with normal plasma → confirms factor deficiency (not inhibitor)</span></div>
+      <div class="info-row"><span class="info-key">Hemophilia A Tx</span><span class="info-val">Recombinant Factor VIII concentrate; DDAVP (desmopressin) for mild cases — stimulates vWF and VIII release from endothelium; emicizumab (prophylaxis)</span></div>
+      <div class="info-row"><span class="info-key">Hemophilia B Tx</span><span class="info-val">Recombinant Factor IX concentrate; DDAVP NOT effective for B</span></div>
+      <div class="info-row"><span class="info-key">Inhibitors</span><span class="info-val">Alloantibodies against factor VIII (develop in ~30% of severe A); treat with recombinant Factor VIIa or bypassing agents; emicizumab effective even with inhibitors</span></div>
+      <div class="info-row"><span class="info-key">General precautions</span><span class="info-val">Avoid aspirin/NSAIDs; avoid IM injections; medical alert bracelet; physical therapy for joint disease</span></div>
+    </div>
+  </div>
+  <div class="pearl-box"><div class="pearl-label">Step 1 Pearls — Hemophilia A &amp; B</div><ul class="pearl-items">
+    <li>X-linked recessive — almost exclusively in males. Females are carriers (may have mild symptoms).</li>
+    <li>Classic presentation: young boy with hemarthroses (joint bleeds) + elevated PTT + normal PT + normal bleeding time.</li>
+    <li>Hemophilia A = Factor VIII↓ (most common). Hemophilia B = Factor IX↓ (Christmas disease). Clinically identical — distinguish by factor assay.</li>
+    <li>DDAVP (desmopressin): releases stored vWF and Factor VIII from endothelium → effective for mild Hemophilia A and vWD Type 1. Not useful for B.</li>
+    <li>Mixing study: PTT corrects with normal plasma = factor DEFICIENCY (hemophilia). PTT does NOT correct = INHIBITOR (autoantibody).</li>
+    <li>Acquired hemophilia: autoantibodies against FVIII develop in SLE, pregnancy, malignancy → PTT elevated, mixing study does NOT correct. Treat with corticosteroids + emicizumab.</li>
+  </ul></div>
+</div>
+
+<div class="panel" id="acq">
+  <div class="panel-header">
+    <div class="panel-eyebrow" style="color:#ffa657">Acquired Bleeding &amp; Thrombotic Disorders</div>
+    <div class="panel-title">Acquired Bleeding Disorders</div>
+    <div class="panel-subtitle">ITP · TTP · HUS · DIC · Factor V Leiden · Von Willebrand Disease · Antiphospholipid Syndrome</div>
+    <div class="stat-row">
+      <div class="stat-chip"><span class="sv" style="color:#ffa657">ITP</span><span class="sl">anti-platelet IgG</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#f85149">DIC</span><span class="sl">consume everything</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#3fb950">TTP</span><span class="sl">ADAMTS13 ↓</span></div>
+      <div class="stat-chip"><span class="sv" style="color:#58a6ff">Factor V Leiden</span><span class="sl">most common thrombophilia</span></div>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="card"><div class="card-label" style="color:#ffa657">Immune Thrombocytopenic Purpura (ITP)</div>
+      <div class="info-row"><span class="info-key">Definition</span><span class="info-val">Acquired autoimmune disorder: anti-platelet IgG antibodies (against GpIIb/IIIa) → platelet opsonization → splenic macrophage destruction → thrombocytopenia</span></div>
+      <div class="info-row"><span class="info-key">Epidemiology</span><span class="info-val">Children: acute, often post-viral (self-limited); Adults: chronic, more common in young women (SLE association)</span></div>
+      <div class="info-row"><span class="info-key">Clinical features</span><span class="info-val">Petechiae, purpura, mucosal bleeding (epistaxis, gingival); no splenomegaly; NO fever or microangiopathic anemia (contrasts with TTP)</span></div>
+      <div class="info-row"><span class="info-key">Labs</span><span class="info-val">Isolated thrombocytopenia; normal PT/PTT; ↑megakaryocytes on bone marrow biopsy</span></div>
+      <div class="info-row"><span class="info-key">Treatment</span><span class="info-val">Children: observation (usually self-limited); Adults: steroids (first-line); IVIG (urgent/pre-op); anti-D (Rh+); splenectomy (refractory); TPO agonists (eltrombopag, romiplostim); rituximab</span></div>
+    </div>
+    <div class="card"><div class="card-label" style="color:#3fb950">Thrombotic Thrombocytopenic Purpura (TTP)</div>
+      <div class="info-row"><span class="info-key">Definition</span><span class="info-val">Acquired or congenital deficiency of ADAMTS13 (cleaves vWF multimers) → ultralarge vWF multimers persist → spontaneous platelet aggregation → microthrombi → consumptive thrombocytopenia + MAHA</span></div>
+      <div class="info-row"><span class="info-key">Pentad (FAT RN)</span><span class="info-val">Fever · microAngiopathic hemolytic Anemia (schistocytes) · Thrombocytopenia · Renal failure · Neurologic changes. Full pentad in only a minority of patients.</span></div>
+      <div class="info-row"><span class="info-key">Labs</span><span class="info-val">↓Platelets; schistocytes; ↑LDH; ↑indirect bilirubin; ↓haptoglobin; NORMAL PT/PTT (crucial — no factor consumption unlike DIC)</span></div>
+      <div class="info-row"><span class="info-key">Associations</span><span class="info-val">Acquired: SLE, pregnancy, HIV, drugs (clopidogrel, ticlopidine, quinine); Congenital (Upshaw-Schulman syndrome)</span></div>
+      <div class="info-row"><span class="info-key">Treatment</span><span class="info-val">Plasmapheresis (plasma exchange) — EMERGENCY. Caplacizumab (anti-vWF). Rituximab for refractory. Do NOT transfuse platelets (worsens thrombosis).</span></div>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="card"><div class="card-label" style="color:#f85149">Disseminated Intravascular Coagulation (DIC)</div>
+      <div class="info-row"><span class="info-key">Definition</span><span class="info-val">Systemic activation of coagulation cascade → widespread microthrombi + simultaneous consumption of clotting factors and platelets → paradoxical bleeding + thrombosis</span></div>
+      <div class="info-row"><span class="info-key">Causes</span><span class="info-val">Sepsis (most common); trauma; obstetric emergencies (amniotic fluid embolism, abruption, retained fetus); malignancy (APL — M3 AML); snake bite; burns; anaphylaxis</span></div>
+      <div class="info-row"><span class="info-key">Labs</span><span class="info-val">PT↑↑ + PTT↑↑ + platelets↓ + fibrinogen↓ + D-dimer↑↑ + schistocytes; also ↓antithrombin III, ↓Protein C</span></div>
+      <div class="info-row"><span class="info-key">Clinical features</span><span class="info-val">Bleeding from IV sites, mucosae; purpura fulminans; organ failure (microthrombi); paradoxically both thrombosis and bleeding</span></div>
+      <div class="info-row"><span class="info-key">Treatment</span><span class="info-val">Treat underlying cause (most important!); replace consumed products: FFP (factors), cryoprecipitate (fibrinogen, vWF, VIII), platelets; heparin in select cases</span></div>
+    </div>
+    <div class="card"><div class="card-label" style="color:#e05c5c">HUS vs TTP vs DIC</div>
+      <table class="lab-table">
+        <tr><th></th><th>TTP</th><th>HUS</th><th>DIC</th></tr>
+        <tr><td>Mechanism</td><td>ADAMTS13↓</td><td>Shiga toxin or aHUS</td><td>Consumptive coagulopathy</td></tr>
+        <tr><td>PT/PTT</td><td class="norm">Normal</td><td class="norm">Normal</td><td class="up">↑↑</td></tr>
+        <tr><td>Schistocytes</td><td class="up">Yes</td><td class="up">Yes</td><td class="up">Yes</td></tr>
+        <tr><td>Fibrinogen</td><td class="norm">Normal</td><td class="norm">Normal</td><td class="down">↓↓</td></tr>
+        <tr><td>D-dimer</td><td class="norm">Normal/mild↑</td><td class="norm">Normal</td><td class="up">↑↑</td></tr>
+        <tr><td>Neuro symptoms</td><td class="up">Prominent</td><td>Less common</td><td>Variable</td></tr>
+        <tr><td>Renal failure</td><td>Mild</td><td class="up">Prominent</td><td>Variable</td></tr>
+        <tr><td>Treatment</td><td>Plasmapheresis</td><td>Supportive; eculizumab</td><td>Treat cause; FFP/cryo/platelets</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="card"><div class="card-label" style="color:#58a6ff">Factor V Leiden — Most Common Inherited Thrombophilia</div>
+      <div class="info-row"><span class="info-key">Mechanism</span><span class="info-val">Point mutation in Factor V gene (Arg506Gln) → Factor V resistant to degradation by activated Protein C (APC resistance) → prolonged thrombin generation → hypercoagulable state</span></div>
+      <div class="info-row"><span class="info-key">Epidemiology</span><span class="info-val">Most common inherited thrombophilia in Caucasians; autosomal dominant; heterozygotes 5-10x VTE risk; homozygotes 80x risk</span></div>
+      <div class="info-row"><span class="info-key">Clinical features</span><span class="info-val">DVT; PE; recurrent miscarriages; thrombosis at unusual sites (cerebral, mesenteric veins); exacerbated by OCP, pregnancy, surgery</span></div>
+      <div class="info-row"><span class="info-key">Labs</span><span class="info-val">PT, PTT, bleeding time all NORMAL; diagnosed by APC resistance assay + genetic testing</span></div>
+      <div class="info-row"><span class="info-key">Treatment</span><span class="info-val">Anticoagulation (heparin → warfarin or DOACs) for acute VTE; long-term anticoagulation for recurrent events</span></div>
+    </div>
+    <div class="card"><div class="card-label" style="color:#a371f7">Von Willebrand Disease (vWD)</div>
+      <div class="info-row"><span class="info-key">Definition</span><span class="info-val">Most common inherited bleeding disorder; deficiency/dysfunction of vWF, which binds exposed collagen → platelet GpIb adhesion + carries/protects Factor VIII</span></div>
+      <div class="info-row"><span class="info-key">Types</span><span class="info-val">Type 1 (most common): quantitative ↓; AD. Type 2: qualitative defect. Type 3: complete absence; AR; severe.</span></div>
+      <div class="info-row"><span class="info-key">Clinical features</span><span class="info-val">Mucosal bleeding (epistaxis, menorrhagia, gingival, GI) — NOT hemarthroses (contrasts with hemophilia)</span></div>
+      <div class="info-row"><span class="info-key">Labs</span><span class="info-val">↑Bleeding time; PTT elevated or normal (↓FVIII); PT normal; ↓ristocetin cofactor activity; ↓vWF antigen</span></div>
+      <div class="info-row"><span class="info-key">Treatment</span><span class="info-val">DDAVP (desmopressin) — Type 1 and mild Type 2A; vWF concentrates for Type 3/severe. Avoid aspirin/NSAIDs.</span></div>
+    </div>
+  </div>
+  <div class="card" style="margin-bottom:.85rem"><div class="card-label" style="color:#ffa657">Other Thrombophilias &amp; Hypercoagulable States</div>
+    <div class="subgrid">
+      <div class="sc"><div class="sc-name" style="color:#58a6ff">Prothrombin G20210A mutation</div><div class="sc-desc">2nd most common inherited thrombophilia in Caucasians. Elevated prothrombin levels → increased thrombin generation → DVT/PE risk. Normal PT/PTT. Autosomal dominant.</div></div>
+      <div class="sc"><div class="sc-name" style="color:#3fb950">Protein C &amp; S deficiency</div><div class="sc-desc">Natural anticoagulants. Deficiency → inadequate inactivation of Va and VIIIa → hypercoagulable. Warfarin-induced skin necrosis (Protein C short half-life, drops first). Autosomal dominant.</div></div>
+      <div class="sc"><div class="sc-name" style="color:#a371f7">Antithrombin III deficiency</div><div class="sc-desc">AT-III normally inhibits thrombin and Xa. Deficiency → hypercoagulable. Heparin resistance (heparin requires AT-III to work). Acquired by nephrotic syndrome, liver disease, heparin use.</div></div>
+      <div class="sc"><div class="sc-name" style="color:#f85149">Antiphospholipid syndrome (APS)</div><div class="sc-desc">Autoimmune: antiphospholipid antibodies → paradoxical hypercoagulable state (thrombosis + recurrent miscarriages) despite ↑PTT in vitro. Lupus anticoagulant; anticardiolipin Ab; anti-β2 glycoprotein I. Treatment: lifelong anticoagulation.</div></div>
+    </div>
+  </div>
+  <div class="hl hl-amber">Warfarin-induced skin necrosis: occurs early in warfarin therapy due to rapid depletion of Protein C (short half-life, vitamin K-dependent) before anticoagulant effect is established → paradoxical thrombosis of skin microvasculature → necrosis. Seen especially in Protein C/S deficiency. Overlap with heparin when starting warfarin to prevent this.</div>
+  <div class="pearl-box"><div class="pearl-label">Step 1 Pearls — Acquired Disorders</div><ul class="pearl-items">
+    <li>ITP: isolated thrombocytopenia + normal PT/PTT + increased megakaryocytes on marrow. Treat with steroids → IVIG → splenectomy. Do NOT transfuse platelets unless emergency.</li>
+    <li>TTP: pentad (FAT RN) + schistocytes + NORMAL PT/PTT (not DIC!). ADAMTS13 deficiency. Treat with PLASMAPHERESIS — do NOT give platelets.</li>
+    <li>HUS vs TTP: HUS = E. coli O157:H7 (Shiga toxin) + hemolytic anemia + renal failure + thrombocytopenia, primarily children. Treatment: supportive (avoid antibiotics in Shiga-HUS).</li>
+    <li>DIC: ALL consumed (PT↑, PTT↑, fibrinogen↓, platelets↓, D-dimer↑↑). Treat the underlying cause FIRST.</li>
+    <li>Factor V Leiden: most common inherited thrombophilia in Caucasians. Normal PT/PTT. Resistance to APC. DVT/PE/miscarriages. Worsened by OCP.</li>
+    <li>vWD: mucosal bleeding (NOT hemarthroses). ↑bleeding time + ↓ristocetin cofactor activity. DDAVP for Type 1. Most common inherited bleeding disorder overall.</li>
+    <li>Antiphospholipid syndrome: paradox — ↑PTT in vitro but HYPERCOAGULABLE in vivo. Recurrent thrombosis + miscarriages. Treat with lifelong anticoagulation.</li>
+  </ul></div>
+</div>
+
+</main>
+</div>
+
+<script>
+function show(id, el) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  el.classList.add('active');
+  document.getElementById('mainContent').scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
